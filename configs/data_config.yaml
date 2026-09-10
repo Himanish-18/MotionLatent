@@ -1,0 +1,133 @@
+# ===================================================================
+# MotionLatent — Data Configuration
+# ===================================================================
+# This file contains the currently recommended values and decisions
+# for the PAMAP2 preprocessing pipeline.
+# Values marked [PROVISIONAL] may change based on Phase 2 experiments.
+
+dataset:
+  name: "PAMAP2 Physical Activity Monitoring"
+  version: "1.0"
+  source: "https://archive.ics.uci.edu/ml/datasets/PAMAP2+Physical+Activity+Monitoring"
+  # Use relative path from project root — discovered automatically
+  raw_path: "pamap2+physical+activity+monitoring/PAMAP2_Dataset/PAMAP2_Dataset"
+  protocol_subdir: "Protocol"
+  optional_subdir: "Optional"
+
+sensors:
+  locations:
+    - hand    # dominant wrist (IMU over the wrist on the dominant arm)
+    - chest
+    - ankle   # dominant side
+
+  modalities:
+    primary:
+      - accelerometer_16g   # ±16g range — preferred for vigorous activities
+      - gyroscope
+      - magnetometer
+    excluded:
+      - accelerometer_6g    # redundant with 16g, narrower range
+      - orientation          # INVALID per PAMAP2 readme (all NaN)
+      - temperature          # environmental, not motion
+      - heart_rate           # physiological, not motion
+
+  # Total primary motion channels: 3 locations × 3 modalities × 3 axes = 27
+  num_primary_channels: 27
+
+  selected_columns:
+    # Accelerometer 16g (9 channels)
+    - hand_acc_16g_x
+    - hand_acc_16g_y
+    - hand_acc_16g_z
+    - chest_acc_16g_x
+    - chest_acc_16g_y
+    - chest_acc_16g_z
+    - ankle_acc_16g_x
+    - ankle_acc_16g_y
+    - ankle_acc_16g_z
+    # Gyroscope (9 channels)
+    - hand_gyro_x
+    - hand_gyro_y
+    - hand_gyro_z
+    - chest_gyro_x
+    - chest_gyro_y
+    - chest_gyro_z
+    - ankle_gyro_x
+    - ankle_gyro_y
+    - ankle_gyro_z
+    # Magnetometer (9 channels)
+    - hand_mag_x
+    - hand_mag_y
+    - hand_mag_z
+    - chest_mag_x
+    - chest_mag_y
+    - chest_mag_z
+    - ankle_mag_x
+    - ankle_mag_y
+    - ankle_mag_z
+
+sampling:
+  nominal_frequency_hz: 100
+  # [PROVISIONAL] — empirical analysis may suggest slight deviation
+  target_frequency_hz: 100
+  heart_rate_frequency_hz: 9  # native HR sensor rate (interpolated to 100Hz)
+
+window:
+  # [PROVISIONAL] — recommended based on Phase 1 windowing analysis
+  duration_seconds: 2.56
+  overlap_fraction: 0.50
+  # Resulting: 256 samples per window at 100Hz
+  # This aligns with common HAR literature (power-of-2 for FFT)
+  samples_per_window: 256
+
+preprocessing:
+  normalization:
+    # [PROVISIONAL] — StandardScaler recommended; RobustScaler as alternative
+    method: "StandardScaler"
+    scope: "per_channel"
+    fit_on: "train_set_only"  # CRITICAL: avoid data leakage
+
+  missing_value_strategy:
+    # [PROVISIONAL]
+    method: "linear_interpolation"
+    max_gap_samples: 10
+    fallback: "forward_fill_then_drop"
+
+  filtering:
+    # [PROVISIONAL] — may apply low-pass filter if noise warrants it
+    apply: false
+    type: "butterworth_lowpass"
+    cutoff_hz: 20
+    order: 4
+
+  invalid_columns:
+    # These columns MUST be removed before any ML pipeline
+    - hand_orientation_0
+    - hand_orientation_1
+    - hand_orientation_2
+    - hand_orientation_3
+    - chest_orientation_0
+    - chest_orientation_1
+    - chest_orientation_2
+    - chest_orientation_3
+    - ankle_orientation_0
+    - ankle_orientation_1
+    - ankle_orientation_2
+    - ankle_orientation_3
+
+evaluation:
+  # Subject-aware evaluation to prevent data leakage
+  strategy: "leave_one_subject_out"
+  # Alternative: GroupKFold with subject_id as group
+  alternative_strategy: "group_k_fold"
+  num_folds: 9  # one per subject
+
+  activity_zero_policy:
+    # Activity 0 (transient) excluded from primary evaluation
+    # but retained in dataset for transparency
+    action: "exclude_from_evaluation"
+    rationale: >
+      Activity 0 represents transitions between activities.
+      Including it would contaminate activity-structure evaluation
+      since it has no consistent motion pattern.
+    retain_in_dataset: true

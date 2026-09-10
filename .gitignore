@@ -1,0 +1,68 @@
+# ============================================================
+# MotionLatent .gitignore
+# ============================================================
+
+# --- Raw and processed data (NEVER commit) ---
+pamap2+physical+activity+monitoring/
+data/raw/
+data/processed/
+data/interim/
+*.dat
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+*.egg
+dist/
+build/
+.eggs/
+
+# --- Virtual environments ---
+venv/
+.venv/
+env/
+.env/
+
+# --- IDE / Editor ---
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+
+# --- Jupyter ---
+.ipynb_checkpoints/
+*.ipynb_meta/
+
+# --- OS ---
+.DS_Store
+Thumbs.db
+desktop.ini
+ehthumbs.db
+
+# --- Generated reports/figures (large) ---
+reports/figures/*.png
+reports/figures/*.pdf
+reports/figures/*.svg
+
+# --- Audit outputs (machine-readable, regenerable) ---
+reports/audit_output.json
+
+# --- Secrets / credentials ---
+*.pem
+*.key
+.env
+.env.*
+
+# --- Caches ---
+.cache/
+.pytest_cache/
+.mypy_cache/
+
+# --- Gemini IDE ---
+.gemini/

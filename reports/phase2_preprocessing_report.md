@@ -24,11 +24,11 @@
 
 ## 3. Window Generation Summary
 
-- **Total windows:** 22,415
-- **Pure windows:** 15,049 (single activity >= 80%)
-- **Mixed windows:** 224 (no activity >= 80%)
-- **Transient windows:** 7,142 (activity 0, pure)
-- **Rejected windows:** 0 (NaN/Inf detected)
+- **Total accepted windows:** 22,249
+- **Pure non-transient windows:** 14,973 (single activity >= 80%, activity != 0)
+- **Pure transient windows:** 7,057 (activity 0, >= 80%)
+- **Mixed windows:** 219 (no activity >= 80%)
+- **Rejected candidate windows:** 166 (gap-crossing or invalid)
 - **Window size:** 256 samples (2.56s at 100Hz)
 - **Stride:** 128 samples (50% overlap)
 - **Channels:** 27 (acc_16g + gyro + mag x 3 locations)
@@ -37,33 +37,33 @@
 
 | Subject | Windows |
 |---------|---------|
-| S101 | 2,938 |
-| S102 | 3,488 |
-| S103 | 1,973 |
-| S104 | 2,573 |
-| S105 | 2,925 |
-| S106 | 2,823 |
-| S107 | 2,447 |
-| S108 | 3,183 |
-| S109 | 65 |
+| S101 | 2,916 |
+| S102 | 3,451 |
+| S103 | 1,963 |
+| S104 | 2,559 |
+| S105 | 2,906 |
+| S106 | 2,809 |
+| S107 | 2,434 |
+| S108 | 3,148 |
+| S109 | 63 |
 
 ## 5. Windows per Activity (Pure Only)
 
 | Activity ID | Activity Name | Windows |
 |-------------|---------------|---------|
-| 0 | transient | 7,142 |
-| 1 | lying | 1,494 |
-| 2 | sitting | 1,436 |
-| 3 | standing | 1,471 |
-| 4 | walking | 1,857 |
+| 0 | transient | 7,057 |
+| 1 | lying | 1,491 |
+| 2 | sitting | 1,425 |
+| 3 | standing | 1,445 |
+| 4 | walking | 1,842 |
 | 5 | running | 760 |
-| 6 | cycling | 1,279 |
+| 6 | cycling | 1,277 |
 | 7 | Nordic_walking | 1,461 |
 | 12 | ascending_stairs | 895 |
 | 13 | descending_stairs | 803 |
 | 16 | vacuum_cleaning | 1,360 |
-| 17 | ironing | 1,854 |
-| 24 | rope_jumping | 379 |
+| 17 | ironing | 1,841 |
+| 24 | rope_jumping | 373 |
 
 ## 6. Subject-Activity Coverage
 
@@ -81,7 +81,7 @@
 
 ## 7. Final Tensor Shape
 
-- Shape: **[22415, 256, 27]** = (windows, 256, 27)
+- Shape: **[22249, 256, 27]** = (windows, 256, 27)
 - Flattened raw baseline: **6,912** dimensions per window
 
 ## 8. Normalization
@@ -95,15 +95,15 @@
 
 | Test Subject | Training Subjects | Training Windows |
 |-------------|-------------------|------------------|
-| S101 | S102, S103, S104, S105, S106, S107, S108, S109 | 19,477 |
-| S102 | S101, S103, S104, S105, S106, S107, S108, S109 | 18,927 |
-| S103 | S101, S102, S104, S105, S106, S107, S108, S109 | 20,442 |
-| S104 | S101, S102, S103, S105, S106, S107, S108, S109 | 19,842 |
-| S105 | S101, S102, S103, S104, S106, S107, S108, S109 | 19,490 |
-| S106 | S101, S102, S103, S104, S105, S107, S108, S109 | 19,592 |
-| S107 | S101, S102, S103, S104, S105, S106, S108, S109 | 19,968 |
-| S108 | S101, S102, S103, S104, S105, S106, S107, S109 | 19,232 |
-| S109 | S101, S102, S103, S104, S105, S106, S107, S108 | 22,350 |
+| S101 | S102, S103, S104, S105, S106, S107, S108, S109 | 19,333 |
+| S102 | S101, S103, S104, S105, S106, S107, S108, S109 | 18,798 |
+| S103 | S101, S102, S104, S105, S106, S107, S108, S109 | 20,286 |
+| S104 | S101, S102, S103, S105, S106, S107, S108, S109 | 19,690 |
+| S105 | S101, S102, S103, S104, S106, S107, S108, S109 | 19,343 |
+| S106 | S101, S102, S103, S104, S105, S107, S108, S109 | 19,440 |
+| S107 | S101, S102, S103, S104, S105, S106, S108, S109 | 19,815 |
+| S108 | S101, S102, S103, S104, S105, S106, S107, S109 | 19,101 |
+| S109 | S101, S102, S103, S104, S105, S106, S107, S108 | 22,186 |
 
 ## 9. LOSO Split Design
 

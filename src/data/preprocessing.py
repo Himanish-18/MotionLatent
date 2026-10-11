@@ -267,9 +267,18 @@ def generate_windows_for_subject(
     n_samples = len(df)
     n_windows = max(0, (n_samples - window_size) // stride + 1)
 
+    # Expected duration of a window in timestamp units
+    # At 100 Hz, 256 samples = 2.55s. In PAMAP2, contiguous samples have exactly
+    # dt = 0.01s. Allow 0.02s tolerance for floating-point precision. Any window
+    # spanning a dropped row gap (>= 11 samples = 0.11s) will have duration >= 2.66s
+    # and must be rejected to prevent stitching non-contiguous data.
+    expected_window_duration = (window_size - 1) * 0.01  # 2.55s
+    max_allowed_duration = expected_window_duration + 0.02  # 2.57s
+
     windows_list = []
     infos = []
     rejected = 0
+    gap_rejected = 0
     activity_counts: Dict[int, int] = {}
 
     for i in range(n_windows):
@@ -279,6 +288,14 @@ def generate_windows_for_subject(
 
         # Validate: no NaN/Inf in this window
         if np.any(~np.isfinite(window_data)):
+            rejected += 1
+            continue
+
+        # Validate: window does not cross a timestamp discontinuity
+        # (caused by dropped rows from long-gap handling)
+        window_duration = timestamps[end - 1] - timestamps[start]
+        if window_duration > max_allowed_duration:
+            gap_rejected += 1
             rejected += 1
             continue
 

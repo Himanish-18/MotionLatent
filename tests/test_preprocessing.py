@@ -447,3 +447,111 @@ class TestReproducibility:
         w1, _, _ = generate_windows_for_subject(df1)
         w2, _, _ = generate_windows_for_subject(df2)
         np.testing.assert_array_equal(w1, w2)
+
+
+# ===================================================================
+# Gap-crossing regression tests (Phase 2.1)
+# ===================================================================
+class TestGapCrossingRejection:
+    """Regression tests for the gap-crossing defect found in Phase 2.1.
+
+    When rows are dropped due to long NaN gaps, the resulting DataFrame
+    has timestamp discontinuities. Windows spanning those discontinuities
+    must be rejected.
+    """
+
+    def test_window_does_not_cross_timestamp_gap(self):
+        """Insert a timestamp discontinuity and verify windows crossing
+        it are rejected."""
+        rng = np.random.RandomState(42)
+        n = 800
+        df = _make_subject_df(120, n_rows=n, rng_seed=42)
+        df = select_channels(df)
+
+        # Manually create a timestamp discontinuity at row 400:
+        # rows 0-399 have timestamps 0.00-3.99,
+        # rows 400-799 jump to timestamps 10.00-13.99.
+        df = df.copy()
+        ts = df["timestamp"].values.copy()
+        ts[400:] += 6.0  # create a 6-second gap
+        df["timestamp"] = ts
+
+        # Clean (no NaN in this df, so no rows dropped)
+        df_clean, _ = handle_missing_values(df)
+
+        windows, infos, report = generate_windows_for_subject(df_clean)
+
+        # No accepted window should span the gap
+        for info in infos:
+            duration = info.end_timestamp - info.start_timestamp
+            # At 100 Hz, 256 samples = 2.55s. With tolerance = 2.57s.
+            # No window should be longer than that.
+            assert duration <= 2.57, (
+                f"Window {info.window_idx} spans {duration:.2f}s — "
+                f"crosses a timestamp discontinuity!"
+            )
+
+        # Some windows should have been rejected
+        assert report.rejected_windows > 0
+
+    def test_contiguous_data_no_rejection(self):
+        """Perfectly contiguous data should have zero rejected windows."""
+        df = _make_subject_df(121, n_rows=600, rng_seed=42)
+        df = select_channels(df)
+        df_clean, _ = handle_missing_values(df)
+
+        windows, infos, report = generate_windows_for_subject(df_clean)
+        assert report.rejected_windows == 0
+
+    def test_long_gap_handling_then_windowing(self):
+        """End-to-end: inject long NaN gap -> handle missing -> window.
+        Verify no accepted window crosses the gap boundary."""
+        df = _make_subject_df(122, n_rows=1000, inject_long_gap=True)
+        df = select_channels(df)
+        df_clean, mv_report = handle_missing_values(df)
+
+        assert mv_report.rows_dropped > 0  # rows were dropped
+
+        windows, infos, report = generate_windows_for_subject(df_clean)
+
+        for info in infos:
+            duration = info.end_timestamp - info.start_timestamp
+            assert duration <= 2.57, (
+                f"Window {info.window_idx}: duration={duration:.4f}s crosses gap"
+            )
+
+
+# ===================================================================
+# Selected-channel NaN/Inf after handling (Phase 2.1)
+# ===================================================================
+class TestSelectedChannelIntegrity:
+    """Verify that after channel selection + missing-value handling,
+    the 27 selected motion channels contain no NaN or Inf."""
+
+    def test_no_nan_in_selected_channels_clean(self, subject101_df):
+        df = select_channels(subject101_df)
+        df_clean, _ = handle_missing_values(df)
+        motion_cols = [c for c in PRIMARY_MOTION_COLS if c in df_clean.columns]
+        assert df_clean[motion_cols].isnull().sum().sum() == 0
+
+    def test_no_inf_in_selected_channels_clean(self, subject101_df):
+        df = select_channels(subject101_df)
+        df_clean, _ = handle_missing_values(df)
+        motion_cols = [c for c in PRIMARY_MOTION_COLS if c in df_clean.columns]
+        inf_count = np.isinf(df_clean[motion_cols].values).sum()
+        assert inf_count == 0
+
+    def test_no_nan_after_short_gap_interpolation(self, subject_with_short_gaps):
+        df = select_channels(subject_with_short_gaps)
+        df_clean, _ = handle_missing_values(df)
+        motion_cols = [c for c in PRIMARY_MOTION_COLS if c in df_clean.columns]
+        assert df_clean[motion_cols].isnull().sum().sum() == 0
+        assert np.isinf(df_clean[motion_cols].values).sum() == 0
+
+    def test_no_nan_after_long_gap_handling(self, subject_with_long_gap):
+        df = select_channels(subject_with_long_gap)
+        df_clean, _ = handle_missing_values(df)
+        motion_cols = [c for c in PRIMARY_MOTION_COLS if c in df_clean.columns]
+        assert df_clean[motion_cols].isnull().sum().sum() == 0
+        assert np.isinf(df_clean[motion_cols].values).sum() == 0
+

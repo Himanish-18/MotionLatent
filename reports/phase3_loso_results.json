@@ -1,0 +1,4745 @@
+[
+  {
+    "subject_id": 101,
+    "method": "Raw Baseline",
+    "latent_dim": 6912,
+    "reconstruction": {
+      "mse": 0.0,
+      "rmse": 0.0
+    },
+    "neighbourhood": {
+      "trustworthiness": 1.0,
+      "knn_overlap": 1.0
+    },
+    "downstream_knn": {
+      "accuracy": 0.5044,
+      "balanced_accuracy": 0.4694,
+      "macro_f1": 0.417,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 6912,
+      "compression_ratio": 1.0,
+      "latent_bytes_per_window": 27648,
+      "param_count": 0,
+      "model_size_kb": 0.0,
+      "encoding_latency_ms": 0.0
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 101,
+    "method": "PCA",
+    "latent_dim": 2,
+    "reconstruction": {
+      "mse": 1.416293,
+      "rmse": 1.190081
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.7979,
+      "knn_overlap": 0.2209
+    },
+    "downstream_knn": {
+      "accuracy": 0.2403,
+      "balanced_accuracy": 0.2161,
+      "macro_f1": 0.2106,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 2,
+      "compression_ratio": 3456.0,
+      "latent_bytes_per_window": 8,
+      "param_count": 20736,
+      "model_size_kb": 81.0,
+      "encoding_latency_ms": 0.0337
+    },
+    "explained_variance_ratio": 0.06150366738438606,
+    "cumulative_explained_variance": 0.20416278019547462,
+    "converged": true
+  },
+  {
+    "subject_id": 101,
+    "method": "PCA",
+    "latent_dim": 4,
+    "reconstruction": {
+      "mse": 1.213202,
+      "rmse": 1.101454
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.8342,
+      "knn_overlap": 0.2983
+    },
+    "downstream_knn": {
+      "accuracy": 0.3088,
+      "balanced_accuracy": 0.2857,
+      "macro_f1": 0.2672,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 4,
+      "compression_ratio": 1728.0,
+      "latent_bytes_per_window": 16,
+      "param_count": 34560,
+      "model_size_kb": 135.0,
+      "encoding_latency_ms": 0.031
+    },
+    "explained_variance_ratio": 0.03569229692220688,
+    "cumulative_explained_variance": 0.2817642018198967,
+    "converged": true
+  },
+  {
+    "subject_id": 101,
+    "method": "PCA",
+    "latent_dim": 8,
+    "reconstruction": {
+      "mse": 1.012208,
+      "rmse": 1.006086
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.9245,
+      "knn_overlap": 0.4211
+    },
+    "downstream_knn": {
+      "accuracy": 0.5054,
+      "balanced_accuracy": 0.4782,
+      "macro_f1": 0.4349,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 8,
+      "compression_ratio": 864.0,
+      "latent_bytes_per_window": 32,
+      "param_count": 62208,
+      "model_size_kb": 243.0,
+      "encoding_latency_ms": 0.038
+    },
+    "explained_variance_ratio": 0.021332591772079468,
+    "cumulative_explained_variance": 0.37416270188987255,
+    "converged": true
+  },
+  {
+    "subject_id": 101,
+    "method": "PCA",
+    "latent_dim": 16,
+    "reconstruction": {
+      "mse": 0.773562,
+      "rmse": 0.879524
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.9461,
+      "knn_overlap": 0.4725
+    },
+    "downstream_knn": {
+      "accuracy": 0.5828,
+      "balanced_accuracy": 0.5621,
+      "macro_f1": 0.5029,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 16,
+      "compression_ratio": 432.0,
+      "latent_bytes_per_window": 64,
+      "param_count": 117504,
+      "model_size_kb": 459.0,
+      "encoding_latency_ms": 0.0351
+    },
+    "explained_variance_ratio": 0.010703843086957932,
+    "cumulative_explained_variance": 0.48961640149354935,
+    "converged": true
+  },
+  {
+    "subject_id": 101,
+    "method": "PCA",
+    "latent_dim": 32,
+    "reconstruction": {
+      "mse": 0.644425,
+      "rmse": 0.802761
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.9665,
+      "knn_overlap": 0.533
+    },
+    "downstream_knn": {
+      "accuracy": 0.5921,
+      "balanced_accuracy": 0.5685,
+      "macro_f1": 0.5013,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 32,
+      "compression_ratio": 216.0,
+      "latent_bytes_per_window": 128,
+      "param_count": 228096,
+      "model_size_kb": 891.0,
+      "encoding_latency_ms": 0.0433
+    },
+    "explained_variance_ratio": 0.004548880737274885,
+    "cumulative_explained_variance": 0.5939390128478408,
+    "converged": true
+  },
+  {
+    "subject_id": 101,
+    "method": "PCA",
+    "latent_dim": 64,
+    "reconstruction": {
+      "mse": 0.491697,
+      "rmse": 0.701211
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.9784,
+      "knn_overlap": 0.6009
+    },
+    "downstream_knn": {
+      "accuracy": 0.5734,
+      "balanced_accuracy": 0.549,
+      "macro_f1": 0.4806,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 64,
+      "compression_ratio": 108.0,
+      "latent_bytes_per_window": 256,
+      "param_count": 449280,
+      "model_size_kb": 1755.0,
+      "encoding_latency_ms": 0.046
+    },
+    "explained_variance_ratio": 0.0020695996936410666,
+    "cumulative_explained_variance": 0.691529426490888,
+    "converged": true
+  },
+  {
+    "subject_id": 101,
+    "method": "PCA",
+    "latent_dim": 128,
+    "reconstruction": {
+      "mse": 0.377261,
+      "rmse": 0.614216
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.9871,
+      "knn_overlap": 0.6665
+    },
+    "downstream_knn": {
+      "accuracy": 0.5714,
+      "balanced_accuracy": 0.5473,
+      "macro_f1": 0.481,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 128,
+      "compression_ratio": 54.0,
+      "latent_bytes_per_window": 512,
+      "param_count": 891648,
+      "model_size_kb": 3483.0,
+      "encoding_latency_ms": 0.0583
+    },
+    "explained_variance_ratio": 0.0009731503087095916,
+    "cumulative_explained_variance": 0.779984917899128,
+    "converged": true
+  },
+  {
+    "subject_id": 101,
+    "method": "FastICA",
+    "latent_dim": 2,
+    "reconstruction": {
+      "mse": 1.416293,
+      "rmse": 1.190081
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.7956,
+      "knn_overlap": 0.215
+    },
+    "downstream_knn": {
+      "accuracy": 0.2455,
+      "balanced_accuracy": 0.219,
+      "macro_f1": 0.2129,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 2,
+      "compression_ratio": 3456.0,
+      "latent_bytes_per_window": 8,
+      "param_count": 20740,
+      "model_size_kb": 81.02,
+      "encoding_latency_ms": 0.0705
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 101,
+    "method": "FastICA",
+    "latent_dim": 4,
+    "reconstruction": {
+      "mse": 1.213201,
+      "rmse": 1.101454
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.8311,
+      "knn_overlap": 0.2912
+    },
+    "downstream_knn": {
+      "accuracy": 0.3228,
+      "balanced_accuracy": 0.2974,
+      "macro_f1": 0.2799,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 4,
+      "compression_ratio": 1728.0,
+      "latent_bytes_per_window": 16,
+      "param_count": 34576,
+      "model_size_kb": 135.06,
+      "encoding_latency_ms": 0.1153
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": false
+  },
+  {
+    "subject_id": 101,
+    "method": "FastICA",
+    "latent_dim": 8,
+    "reconstruction": {
+      "mse": 1.012191,
+      "rmse": 1.006077
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.9287,
+      "knn_overlap": 0.4236
+    },
+    "downstream_knn": {
+      "accuracy": 0.5205,
+      "balanced_accuracy": 0.4924,
+      "macro_f1": 0.4436,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 8,
+      "compression_ratio": 864.0,
+      "latent_bytes_per_window": 32,
+      "param_count": 62272,
+      "model_size_kb": 243.25,
+      "encoding_latency_ms": 0.0559
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 101,
+    "method": "FastICA",
+    "latent_dim": 16,
+    "reconstruction": {
+      "mse": 0.773584,
+      "rmse": 0.879536
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.9486,
+      "knn_overlap": 0.4716
+    },
+    "downstream_knn": {
+      "accuracy": 0.6321,
+      "balanced_accuracy": 0.6098,
+      "macro_f1": 0.5446,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 16,
+      "compression_ratio": 432.0,
+      "latent_bytes_per_window": 64,
+      "param_count": 117760,
+      "model_size_kb": 460.0,
+      "encoding_latency_ms": 0.0427
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 101,
+    "method": "FastICA",
+    "latent_dim": 32,
+    "reconstruction": {
+      "mse": 0.643987,
+      "rmse": 0.802488
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.9726,
+      "knn_overlap": 0.5174
+    },
+    "downstream_knn": {
+      "accuracy": 0.6046,
+      "balanced_accuracy": 0.5825,
+      "macro_f1": 0.5218,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 32,
+      "compression_ratio": 216.0,
+      "latent_bytes_per_window": 128,
+      "param_count": 229120,
+      "model_size_kb": 895.0,
+      "encoding_latency_ms": 0.0439
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 101,
+    "method": "FastICA",
+    "latent_dim": 64,
+    "reconstruction": {
+      "mse": 0.491901,
+      "rmse": 0.701357
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.9799,
+      "knn_overlap": 0.5351
+    },
+    "downstream_knn": {
+      "accuracy": 0.5573,
+      "balanced_accuracy": 0.5417,
+      "macro_f1": 0.498,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 64,
+      "compression_ratio": 108.0,
+      "latent_bytes_per_window": 256,
+      "param_count": 453376,
+      "model_size_kb": 1771.0,
+      "encoding_latency_ms": 0.056
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 101,
+    "method": "Autoencoder",
+    "latent_dim": 4,
+    "reconstruction": {
+      "mse": 1.235827,
+      "rmse": 1.111678
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.9024,
+      "knn_overlap": 0.3555
+    },
+    "downstream_knn": {
+      "accuracy": 0.4676,
+      "balanced_accuracy": 0.4332,
+      "macro_f1": 0.393,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 4,
+      "compression_ratio": 1728.0,
+      "latent_bytes_per_window": 16,
+      "param_count": 3549444,
+      "model_size_kb": 13865.02,
+      "encoding_latency_ms": 0.0453
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 101,
+    "method": "Autoencoder",
+    "latent_dim": 16,
+    "reconstruction": {
+      "mse": 0.747121,
+      "rmse": 0.864361
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.956,
+      "knn_overlap": 0.5228
+    },
+    "downstream_knn": {
+      "accuracy": 0.5864,
+      "balanced_accuracy": 0.5632,
+      "macro_f1": 0.5045,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 16,
+      "compression_ratio": 432.0,
+      "latent_bytes_per_window": 64,
+      "param_count": 3555600,
+      "model_size_kb": 13889.06,
+      "encoding_latency_ms": 0.0452
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 101,
+    "method": "Autoencoder",
+    "latent_dim": 64,
+    "reconstruction": {
+      "mse": 0.542255,
+      "rmse": 0.73638
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.9841,
+      "knn_overlap": 0.6067
+    },
+    "downstream_knn": {
+      "accuracy": 0.604,
+      "balanced_accuracy": 0.5921,
+      "macro_f1": 0.5447,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 64,
+      "compression_ratio": 108.0,
+      "latent_bytes_per_window": 256,
+      "param_count": 3580224,
+      "model_size_kb": 13985.25,
+      "encoding_latency_ms": 0.0465
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 102,
+    "method": "Raw Baseline",
+    "latent_dim": 6912,
+    "reconstruction": {
+      "mse": 0.0,
+      "rmse": 0.0
+    },
+    "neighbourhood": {
+      "trustworthiness": 1.0,
+      "knn_overlap": 1.0
+    },
+    "downstream_knn": {
+      "accuracy": 0.6481,
+      "balanced_accuracy": 0.6017,
+      "macro_f1": 0.5797,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 6912,
+      "compression_ratio": 1.0,
+      "latent_bytes_per_window": 27648,
+      "param_count": 0,
+      "model_size_kb": 0.0,
+      "encoding_latency_ms": 0.0
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 102,
+    "method": "PCA",
+    "latent_dim": 2,
+    "reconstruction": {
+      "mse": 0.993741,
+      "rmse": 0.996865
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.6764,
+      "knn_overlap": 0.1018
+    },
+    "downstream_knn": {
+      "accuracy": 0.2331,
+      "balanced_accuracy": 0.2076,
+      "macro_f1": 0.2102,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 2,
+      "compression_ratio": 3456.0,
+      "latent_bytes_per_window": 8,
+      "param_count": 20736,
+      "model_size_kb": 81.0,
+      "encoding_latency_ms": 0.0372
+    },
+    "explained_variance_ratio": 0.06153552979230881,
+    "cumulative_explained_variance": 0.2053477093577385,
+    "converged": true
+  },
+  {
+    "subject_id": 102,
+    "method": "PCA",
+    "latent_dim": 4,
+    "reconstruction": {
+      "mse": 0.914704,
+      "rmse": 0.956402
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.7178,
+      "knn_overlap": 0.1595
+    },
+    "downstream_knn": {
+      "accuracy": 0.3923,
+      "balanced_accuracy": 0.3616,
+      "macro_f1": 0.3415,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 4,
+      "compression_ratio": 1728.0,
+      "latent_bytes_per_window": 16,
+      "param_count": 34560,
+      "model_size_kb": 135.0,
+      "encoding_latency_ms": 0.0406
+    },
+    "explained_variance_ratio": 0.031858451664447784,
+    "cumulative_explained_variance": 0.28228259086608887,
+    "converged": true
+  },
+  {
+    "subject_id": 102,
+    "method": "PCA",
+    "latent_dim": 8,
+    "reconstruction": {
+      "mse": 0.814477,
+      "rmse": 0.902484
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.8372,
+      "knn_overlap": 0.2347
+    },
+    "downstream_knn": {
+      "accuracy": 0.5091,
+      "balanced_accuracy": 0.4984,
+      "macro_f1": 0.4734,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 8,
+      "compression_ratio": 864.0,
+      "latent_bytes_per_window": 32,
+      "param_count": 62208,
+      "model_size_kb": 243.0,
+      "encoding_latency_ms": 0.0448
+    },
+    "explained_variance_ratio": 0.02093701809644699,
+    "cumulative_explained_variance": 0.37943356297910213,
+    "converged": true
+  },
+  {
+    "subject_id": 102,
+    "method": "PCA",
+    "latent_dim": 16,
+    "reconstruction": {
+      "mse": 0.687801,
+      "rmse": 0.829338
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.9055,
+      "knn_overlap": 0.3254
+    },
+    "downstream_knn": {
+      "accuracy": 0.689,
+      "balanced_accuracy": 0.6505,
+      "macro_f1": 0.6149,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 16,
+      "compression_ratio": 432.0,
+      "latent_bytes_per_window": 64,
+      "param_count": 117504,
+      "model_size_kb": 459.0,
+      "encoding_latency_ms": 0.0304
+    },
+    "explained_variance_ratio": 0.010331510566174984,
+    "cumulative_explained_variance": 0.49468158930540085,
+    "converged": true
+  },
+  {
+    "subject_id": 102,
+    "method": "PCA",
+    "latent_dim": 32,
+    "reconstruction": {
+      "mse": 0.580498,
+      "rmse": 0.761905
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.9391,
+      "knn_overlap": 0.4108
+    },
+    "downstream_knn": {
+      "accuracy": 0.7314,
+      "balanced_accuracy": 0.7146,
+      "macro_f1": 0.7156,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 32,
+      "compression_ratio": 216.0,
+      "latent_bytes_per_window": 128,
+      "param_count": 228096,
+      "model_size_kb": 891.0,
+      "encoding_latency_ms": 0.0314
+    },
+    "explained_variance_ratio": 0.004583260510116816,
+    "cumulative_explained_variance": 0.5969671308994293,
+    "converged": true
+  },
+  {
+    "subject_id": 102,
+    "method": "PCA",
+    "latent_dim": 64,
+    "reconstruction": {
+      "mse": 0.46693,
+      "rmse": 0.683323
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.9637,
+      "knn_overlap": 0.5383
+    },
+    "downstream_knn": {
+      "accuracy": 0.6915,
+      "balanced_accuracy": 0.6698,
+      "macro_f1": 0.6644,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 64,
+      "compression_ratio": 108.0,
+      "latent_bytes_per_window": 256,
+      "param_count": 449280,
+      "model_size_kb": 1755.0,
+      "encoding_latency_ms": 0.0351
+    },
+    "explained_variance_ratio": 0.0020053917542099953,
+    "cumulative_explained_variance": 0.6950547592714429,
+    "converged": true
+  },
+  {
+    "subject_id": 102,
+    "method": "PCA",
+    "latent_dim": 128,
+    "reconstruction": {
+      "mse": 0.357301,
+      "rmse": 0.597747
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.9783,
+      "knn_overlap": 0.6591
+    },
+    "downstream_knn": {
+      "accuracy": 0.7068,
+      "balanced_accuracy": 0.665,
+      "macro_f1": 0.6505,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 128,
+      "compression_ratio": 54.0,
+      "latent_bytes_per_window": 512,
+      "param_count": 891648,
+      "model_size_kb": 3483.0,
+      "encoding_latency_ms": 0.0487
+    },
+    "explained_variance_ratio": 0.0009343376150354743,
+    "cumulative_explained_variance": 0.7826771185500547,
+    "converged": true
+  },
+  {
+    "subject_id": 102,
+    "method": "FastICA",
+    "latent_dim": 2,
+    "reconstruction": {
+      "mse": 0.993741,
+      "rmse": 0.996865
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.682,
+      "knn_overlap": 0.1037
+    },
+    "downstream_knn": {
+      "accuracy": 0.2321,
+      "balanced_accuracy": 0.2065,
+      "macro_f1": 0.2085,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 2,
+      "compression_ratio": 3456.0,
+      "latent_bytes_per_window": 8,
+      "param_count": 20740,
+      "model_size_kb": 81.02,
+      "encoding_latency_ms": 0.0486
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 102,
+    "method": "FastICA",
+    "latent_dim": 4,
+    "reconstruction": {
+      "mse": 0.914702,
+      "rmse": 0.956401
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.7174,
+      "knn_overlap": 0.157
+    },
+    "downstream_knn": {
+      "accuracy": 0.3938,
+      "balanced_accuracy": 0.3525,
+      "macro_f1": 0.3375,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 4,
+      "compression_ratio": 1728.0,
+      "latent_bytes_per_window": 16,
+      "param_count": 34576,
+      "model_size_kb": 135.06,
+      "encoding_latency_ms": 0.0404
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 102,
+    "method": "FastICA",
+    "latent_dim": 8,
+    "reconstruction": {
+      "mse": 0.814471,
+      "rmse": 0.90248
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.85,
+      "knn_overlap": 0.2438
+    },
+    "downstream_knn": {
+      "accuracy": 0.5367,
+      "balanced_accuracy": 0.5208,
+      "macro_f1": 0.5007,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 8,
+      "compression_ratio": 864.0,
+      "latent_bytes_per_window": 32,
+      "param_count": 62272,
+      "model_size_kb": 243.25,
+      "encoding_latency_ms": 0.0458
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 102,
+    "method": "FastICA",
+    "latent_dim": 16,
+    "reconstruction": {
+      "mse": 0.687799,
+      "rmse": 0.829336
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.9114,
+      "knn_overlap": 0.3393
+    },
+    "downstream_knn": {
+      "accuracy": 0.7003,
+      "balanced_accuracy": 0.6639,
+      "macro_f1": 0.6325,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 16,
+      "compression_ratio": 432.0,
+      "latent_bytes_per_window": 64,
+      "param_count": 117760,
+      "model_size_kb": 460.0,
+      "encoding_latency_ms": 0.0397
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 102,
+    "method": "FastICA",
+    "latent_dim": 32,
+    "reconstruction": {
+      "mse": 0.580522,
+      "rmse": 0.76192
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.9506,
+      "knn_overlap": 0.4399
+    },
+    "downstream_knn": {
+      "accuracy": 0.7378,
+      "balanced_accuracy": 0.7235,
+      "macro_f1": 0.7196,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 32,
+      "compression_ratio": 216.0,
+      "latent_bytes_per_window": 128,
+      "param_count": 229120,
+      "model_size_kb": 895.0,
+      "encoding_latency_ms": 0.0456
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 102,
+    "method": "FastICA",
+    "latent_dim": 64,
+    "reconstruction": {
+      "mse": 0.467138,
+      "rmse": 0.683475
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.9665,
+      "knn_overlap": 0.4962
+    },
+    "downstream_knn": {
+      "accuracy": 0.691,
+      "balanced_accuracy": 0.6527,
+      "macro_f1": 0.6367,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 64,
+      "compression_ratio": 108.0,
+      "latent_bytes_per_window": 256,
+      "param_count": 453376,
+      "model_size_kb": 1771.0,
+      "encoding_latency_ms": 0.0452
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 102,
+    "method": "Autoencoder",
+    "latent_dim": 4,
+    "reconstruction": {
+      "mse": 0.889302,
+      "rmse": 0.943028
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.8042,
+      "knn_overlap": 0.1986
+    },
+    "downstream_knn": {
+      "accuracy": 0.5012,
+      "balanced_accuracy": 0.4868,
+      "macro_f1": 0.4575,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 4,
+      "compression_ratio": 1728.0,
+      "latent_bytes_per_window": 16,
+      "param_count": 3549444,
+      "model_size_kb": 13865.02,
+      "encoding_latency_ms": 0.0436
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 102,
+    "method": "Autoencoder",
+    "latent_dim": 16,
+    "reconstruction": {
+      "mse": 0.6332,
+      "rmse": 0.795739
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.9218,
+      "knn_overlap": 0.3837
+    },
+    "downstream_knn": {
+      "accuracy": 0.6456,
+      "balanced_accuracy": 0.6357,
+      "macro_f1": 0.6152,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 16,
+      "compression_ratio": 432.0,
+      "latent_bytes_per_window": 64,
+      "param_count": 3555600,
+      "model_size_kb": 13889.06,
+      "encoding_latency_ms": 0.0379
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 102,
+    "method": "Autoencoder",
+    "latent_dim": 64,
+    "reconstruction": {
+      "mse": 0.514108,
+      "rmse": 0.717013
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.9601,
+      "knn_overlap": 0.4908
+    },
+    "downstream_knn": {
+      "accuracy": 0.761,
+      "balanced_accuracy": 0.7222,
+      "macro_f1": 0.7094,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 64,
+      "compression_ratio": 108.0,
+      "latent_bytes_per_window": 256,
+      "param_count": 3580224,
+      "model_size_kb": 13985.25,
+      "encoding_latency_ms": 0.0587
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 103,
+    "method": "Raw Baseline",
+    "latent_dim": 6912,
+    "reconstruction": {
+      "mse": 0.0,
+      "rmse": 0.0
+    },
+    "neighbourhood": {
+      "trustworthiness": 1.0,
+      "knn_overlap": 1.0
+    },
+    "downstream_knn": {
+      "accuracy": 0.7377,
+      "balanced_accuracy": 0.6652,
+      "macro_f1": 0.4344,
+      "n_classes_test": 8
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 6912,
+      "compression_ratio": 1.0,
+      "latent_bytes_per_window": 27648,
+      "param_count": 0,
+      "model_size_kb": 0.0,
+      "encoding_latency_ms": 0.0
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 103,
+    "method": "PCA",
+    "latent_dim": 2,
+    "reconstruction": {
+      "mse": 0.660918,
+      "rmse": 0.812968
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.7225,
+      "knn_overlap": 0.1685
+    },
+    "downstream_knn": {
+      "accuracy": 0.4218,
+      "balanced_accuracy": 0.3713,
+      "macro_f1": 0.2591,
+      "n_classes_test": 8
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 2,
+      "compression_ratio": 3456.0,
+      "latent_bytes_per_window": 8,
+      "param_count": 20736,
+      "model_size_kb": 81.0,
+      "encoding_latency_ms": 0.0358
+    },
+    "explained_variance_ratio": 0.0630185678601265,
+    "cumulative_explained_variance": 0.19991641491651535,
+    "converged": true
+  },
+  {
+    "subject_id": 103,
+    "method": "PCA",
+    "latent_dim": 4,
+    "reconstruction": {
+      "mse": 0.608381,
+      "rmse": 0.779988
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.7753,
+      "knn_overlap": 0.2183
+    },
+    "downstream_knn": {
+      "accuracy": 0.6684,
+      "balanced_accuracy": 0.6048,
+      "macro_f1": 0.4178,
+      "n_classes_test": 8
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 4,
+      "compression_ratio": 1728.0,
+      "latent_bytes_per_window": 16,
+      "param_count": 34560,
+      "model_size_kb": 135.0,
+      "encoding_latency_ms": 0.0321
+    },
+    "explained_variance_ratio": 0.0338057316839695,
+    "cumulative_explained_variance": 0.27901941165328026,
+    "converged": true
+  },
+  {
+    "subject_id": 103,
+    "method": "PCA",
+    "latent_dim": 8,
+    "reconstruction": {
+      "mse": 0.573417,
+      "rmse": 0.757243
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.8522,
+      "knn_overlap": 0.28
+    },
+    "downstream_knn": {
+      "accuracy": 0.7526,
+      "balanced_accuracy": 0.6899,
+      "macro_f1": 0.5213,
+      "n_classes_test": 8
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 8,
+      "compression_ratio": 864.0,
+      "latent_bytes_per_window": 32,
+      "param_count": 62208,
+      "model_size_kb": 243.0,
+      "encoding_latency_ms": 0.0391
+    },
+    "explained_variance_ratio": 0.021852144971489906,
+    "cumulative_explained_variance": 0.3794570844620466,
+    "converged": true
+  },
+  {
+    "subject_id": 103,
+    "method": "PCA",
+    "latent_dim": 16,
+    "reconstruction": {
+      "mse": 0.483334,
+      "rmse": 0.695222
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.8964,
+      "knn_overlap": 0.3288
+    },
+    "downstream_knn": {
+      "accuracy": 0.8614,
+      "balanced_accuracy": 0.823,
+      "macro_f1": 0.5636,
+      "n_classes_test": 8
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 16,
+      "compression_ratio": 432.0,
+      "latent_bytes_per_window": 64,
+      "param_count": 117504,
+      "model_size_kb": 459.0,
+      "encoding_latency_ms": 0.0296
+    },
+    "explained_variance_ratio": 0.010002268478274345,
+    "cumulative_explained_variance": 0.49388221744447947,
+    "converged": true
+  },
+  {
+    "subject_id": 103,
+    "method": "PCA",
+    "latent_dim": 32,
+    "reconstruction": {
+      "mse": 0.391499,
+      "rmse": 0.625698
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.9303,
+      "knn_overlap": 0.383
+    },
+    "downstream_knn": {
+      "accuracy": 0.8614,
+      "balanced_accuracy": 0.82,
+      "macro_f1": 0.6714,
+      "n_classes_test": 8
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 32,
+      "compression_ratio": 216.0,
+      "latent_bytes_per_window": 128,
+      "param_count": 228096,
+      "model_size_kb": 891.0,
+      "encoding_latency_ms": 0.0402
+    },
+    "explained_variance_ratio": 0.004343679640442133,
+    "cumulative_explained_variance": 0.5944324876181781,
+    "converged": true
+  },
+  {
+    "subject_id": 103,
+    "method": "PCA",
+    "latent_dim": 64,
+    "reconstruction": {
+      "mse": 0.284492,
+      "rmse": 0.533378
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.9639,
+      "knn_overlap": 0.5472
+    },
+    "downstream_knn": {
+      "accuracy": 0.8323,
+      "balanced_accuracy": 0.7884,
+      "macro_f1": 0.5891,
+      "n_classes_test": 8
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 64,
+      "compression_ratio": 108.0,
+      "latent_bytes_per_window": 256,
+      "param_count": 449280,
+      "model_size_kb": 1755.0,
+      "encoding_latency_ms": 0.0343
+    },
+    "explained_variance_ratio": 0.0019640761893242598,
+    "cumulative_explained_variance": 0.6904707972425967,
+    "converged": true
+  },
+  {
+    "subject_id": 103,
+    "method": "PCA",
+    "latent_dim": 128,
+    "reconstruction": {
+      "mse": 0.203303,
+      "rmse": 0.450891
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.9843,
+      "knn_overlap": 0.703
+    },
+    "downstream_knn": {
+      "accuracy": 0.7772,
+      "balanced_accuracy": 0.7316,
+      "macro_f1": 0.5055,
+      "n_classes_test": 8
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 128,
+      "compression_ratio": 54.0,
+      "latent_bytes_per_window": 512,
+      "param_count": 891648,
+      "model_size_kb": 3483.0,
+      "encoding_latency_ms": 0.0494
+    },
+    "explained_variance_ratio": 0.0009428247576579452,
+    "cumulative_explained_variance": 0.7768295732093975,
+    "converged": true
+  },
+  {
+    "subject_id": 103,
+    "method": "FastICA",
+    "latent_dim": 2,
+    "reconstruction": {
+      "mse": 0.660918,
+      "rmse": 0.812968
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.7225,
+      "knn_overlap": 0.1682
+    },
+    "downstream_knn": {
+      "accuracy": 0.4344,
+      "balanced_accuracy": 0.383,
+      "macro_f1": 0.2665,
+      "n_classes_test": 8
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 2,
+      "compression_ratio": 3456.0,
+      "latent_bytes_per_window": 8,
+      "param_count": 20740,
+      "model_size_kb": 81.02,
+      "encoding_latency_ms": 0.0358
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 103,
+    "method": "FastICA",
+    "latent_dim": 4,
+    "reconstruction": {
+      "mse": 0.608381,
+      "rmse": 0.779988
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.7774,
+      "knn_overlap": 0.2121
+    },
+    "downstream_knn": {
+      "accuracy": 0.6677,
+      "balanced_accuracy": 0.6044,
+      "macro_f1": 0.417,
+      "n_classes_test": 8
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 4,
+      "compression_ratio": 1728.0,
+      "latent_bytes_per_window": 16,
+      "param_count": 34576,
+      "model_size_kb": 135.06,
+      "encoding_latency_ms": 0.0361
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 103,
+    "method": "FastICA",
+    "latent_dim": 8,
+    "reconstruction": {
+      "mse": 0.573418,
+      "rmse": 0.757243
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.8596,
+      "knn_overlap": 0.2896
+    },
+    "downstream_knn": {
+      "accuracy": 0.7429,
+      "balanced_accuracy": 0.6818,
+      "macro_f1": 0.4716,
+      "n_classes_test": 8
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 8,
+      "compression_ratio": 864.0,
+      "latent_bytes_per_window": 32,
+      "param_count": 62272,
+      "model_size_kb": 243.25,
+      "encoding_latency_ms": 0.0414
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 103,
+    "method": "FastICA",
+    "latent_dim": 16,
+    "reconstruction": {
+      "mse": 0.483342,
+      "rmse": 0.695228
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.9021,
+      "knn_overlap": 0.3437
+    },
+    "downstream_knn": {
+      "accuracy": 0.8711,
+      "balanced_accuracy": 0.8374,
+      "macro_f1": 0.6843,
+      "n_classes_test": 8
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 16,
+      "compression_ratio": 432.0,
+      "latent_bytes_per_window": 64,
+      "param_count": 117760,
+      "model_size_kb": 460.0,
+      "encoding_latency_ms": 0.0362
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 103,
+    "method": "FastICA",
+    "latent_dim": 32,
+    "reconstruction": {
+      "mse": 0.391288,
+      "rmse": 0.62553
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.9419,
+      "knn_overlap": 0.431
+    },
+    "downstream_knn": {
+      "accuracy": 0.8301,
+      "balanced_accuracy": 0.8027,
+      "macro_f1": 0.6619,
+      "n_classes_test": 8
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 32,
+      "compression_ratio": 216.0,
+      "latent_bytes_per_window": 128,
+      "param_count": 229120,
+      "model_size_kb": 895.0,
+      "encoding_latency_ms": 0.036
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 103,
+    "method": "FastICA",
+    "latent_dim": 64,
+    "reconstruction": {
+      "mse": 0.284073,
+      "rmse": 0.532985
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.9691,
+      "knn_overlap": 0.4947
+    },
+    "downstream_knn": {
+      "accuracy": 0.7809,
+      "balanced_accuracy": 0.7365,
+      "macro_f1": 0.5555,
+      "n_classes_test": 8
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 64,
+      "compression_ratio": 108.0,
+      "latent_bytes_per_window": 256,
+      "param_count": 453376,
+      "model_size_kb": 1771.0,
+      "encoding_latency_ms": 0.0432
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 103,
+    "method": "Autoencoder",
+    "latent_dim": 4,
+    "reconstruction": {
+      "mse": 0.59195,
+      "rmse": 0.769383
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.8148,
+      "knn_overlap": 0.2343
+    },
+    "downstream_knn": {
+      "accuracy": 0.5991,
+      "balanced_accuracy": 0.5507,
+      "macro_f1": 0.3809,
+      "n_classes_test": 8
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 4,
+      "compression_ratio": 1728.0,
+      "latent_bytes_per_window": 16,
+      "param_count": 3549444,
+      "model_size_kb": 13865.02,
+      "encoding_latency_ms": 0.0306
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 103,
+    "method": "Autoencoder",
+    "latent_dim": 16,
+    "reconstruction": {
+      "mse": 0.428285,
+      "rmse": 0.654435
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.9166,
+      "knn_overlap": 0.3833
+    },
+    "downstream_knn": {
+      "accuracy": 0.8629,
+      "balanced_accuracy": 0.8315,
+      "macro_f1": 0.6787,
+      "n_classes_test": 8
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 16,
+      "compression_ratio": 432.0,
+      "latent_bytes_per_window": 64,
+      "param_count": 3555600,
+      "model_size_kb": 13889.06,
+      "encoding_latency_ms": 0.0387
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 103,
+    "method": "Autoencoder",
+    "latent_dim": 64,
+    "reconstruction": {
+      "mse": 0.30765,
+      "rmse": 0.554662
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.964,
+      "knn_overlap": 0.5566
+    },
+    "downstream_knn": {
+      "accuracy": 0.7921,
+      "balanced_accuracy": 0.7584,
+      "macro_f1": 0.6335,
+      "n_classes_test": 8
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 64,
+      "compression_ratio": 108.0,
+      "latent_bytes_per_window": 256,
+      "param_count": 3580224,
+      "model_size_kb": 13985.25,
+      "encoding_latency_ms": 0.0379
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 104,
+    "method": "Raw Baseline",
+    "latent_dim": 6912,
+    "reconstruction": {
+      "mse": 0.0,
+      "rmse": 0.0
+    },
+    "neighbourhood": {
+      "trustworthiness": 1.0,
+      "knn_overlap": 1.0
+    },
+    "downstream_knn": {
+      "accuracy": 0.714,
+      "balanced_accuracy": 0.6834,
+      "macro_f1": 0.5421,
+      "n_classes_test": 10
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 6912,
+      "compression_ratio": 1.0,
+      "latent_bytes_per_window": 27648,
+      "param_count": 0,
+      "model_size_kb": 0.0,
+      "encoding_latency_ms": 0.0
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 104,
+    "method": "PCA",
+    "latent_dim": 2,
+    "reconstruction": {
+      "mse": 0.549424,
+      "rmse": 0.741231
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.7723,
+      "knn_overlap": 0.1493
+    },
+    "downstream_knn": {
+      "accuracy": 0.296,
+      "balanced_accuracy": 0.2844,
+      "macro_f1": 0.2352,
+      "n_classes_test": 10
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 2,
+      "compression_ratio": 3456.0,
+      "latent_bytes_per_window": 8,
+      "param_count": 20736,
+      "model_size_kb": 81.0,
+      "encoding_latency_ms": 0.0337
+    },
+    "explained_variance_ratio": 0.05982130765914917,
+    "cumulative_explained_variance": 0.20046032965183258,
+    "converged": true
+  },
+  {
+    "subject_id": 104,
+    "method": "PCA",
+    "latent_dim": 4,
+    "reconstruction": {
+      "mse": 0.477715,
+      "rmse": 0.69117
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.8355,
+      "knn_overlap": 0.234
+    },
+    "downstream_knn": {
+      "accuracy": 0.596,
+      "balanced_accuracy": 0.5781,
+      "macro_f1": 0.4854,
+      "n_classes_test": 10
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 4,
+      "compression_ratio": 1728.0,
+      "latent_bytes_per_window": 16,
+      "param_count": 34560,
+      "model_size_kb": 135.0,
+      "encoding_latency_ms": 0.0275
+    },
+    "explained_variance_ratio": 0.033207546919584274,
+    "cumulative_explained_variance": 0.2784315086901188,
+    "converged": true
+  },
+  {
+    "subject_id": 104,
+    "method": "PCA",
+    "latent_dim": 8,
+    "reconstruction": {
+      "mse": 0.435903,
+      "rmse": 0.660229
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.8885,
+      "knn_overlap": 0.3057
+    },
+    "downstream_knn": {
+      "accuracy": 0.7012,
+      "balanced_accuracy": 0.6936,
+      "macro_f1": 0.6177,
+      "n_classes_test": 10
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 8,
+      "compression_ratio": 864.0,
+      "latent_bytes_per_window": 32,
+      "param_count": 62208,
+      "model_size_kb": 243.0,
+      "encoding_latency_ms": 0.032
+    },
+    "explained_variance_ratio": 0.021245939657092094,
+    "cumulative_explained_variance": 0.37819054536521435,
+    "converged": true
+  },
+  {
+    "subject_id": 104,
+    "method": "PCA",
+    "latent_dim": 16,
+    "reconstruction": {
+      "mse": 0.343254,
+      "rmse": 0.585879
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.9441,
+      "knn_overlap": 0.3638
+    },
+    "downstream_knn": {
+      "accuracy": 0.8433,
+      "balanced_accuracy": 0.848,
+      "macro_f1": 0.7043,
+      "n_classes_test": 10
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 16,
+      "compression_ratio": 432.0,
+      "latent_bytes_per_window": 64,
+      "param_count": 117504,
+      "model_size_kb": 459.0,
+      "encoding_latency_ms": 0.0266
+    },
+    "explained_variance_ratio": 0.010279634967446327,
+    "cumulative_explained_variance": 0.49244146700948477,
+    "converged": true
+  },
+  {
+    "subject_id": 104,
+    "method": "PCA",
+    "latent_dim": 32,
+    "reconstruction": {
+      "mse": 0.278728,
+      "rmse": 0.527947
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.97,
+      "knn_overlap": 0.4593
+    },
+    "downstream_knn": {
+      "accuracy": 0.8248,
+      "balanced_accuracy": 0.8199,
+      "macro_f1": 0.6832,
+      "n_classes_test": 10
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 32,
+      "compression_ratio": 216.0,
+      "latent_bytes_per_window": 128,
+      "param_count": 228096,
+      "model_size_kb": 891.0,
+      "encoding_latency_ms": 0.0292
+    },
+    "explained_variance_ratio": 0.0044880458153784275,
+    "cumulative_explained_variance": 0.5943924654275179,
+    "converged": true
+  },
+  {
+    "subject_id": 104,
+    "method": "PCA",
+    "latent_dim": 64,
+    "reconstruction": {
+      "mse": 0.205546,
+      "rmse": 0.453371
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.9872,
+      "knn_overlap": 0.5684
+    },
+    "downstream_knn": {
+      "accuracy": 0.7902,
+      "balanced_accuracy": 0.7833,
+      "macro_f1": 0.6448,
+      "n_classes_test": 10
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 64,
+      "compression_ratio": 108.0,
+      "latent_bytes_per_window": 256,
+      "param_count": 449280,
+      "model_size_kb": 1755.0,
+      "encoding_latency_ms": 0.0318
+    },
+    "explained_variance_ratio": 0.001981419278308749,
+    "cumulative_explained_variance": 0.6906276536174119,
+    "converged": true
+  },
+  {
+    "subject_id": 104,
+    "method": "PCA",
+    "latent_dim": 128,
+    "reconstruction": {
+      "mse": 0.143436,
+      "rmse": 0.378729
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.9945,
+      "knn_overlap": 0.6787
+    },
+    "downstream_knn": {
+      "accuracy": 0.765,
+      "balanced_accuracy": 0.7478,
+      "macro_f1": 0.6101,
+      "n_classes_test": 10
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 128,
+      "compression_ratio": 54.0,
+      "latent_bytes_per_window": 512,
+      "param_count": 891648,
+      "model_size_kb": 3483.0,
+      "encoding_latency_ms": 0.0368
+    },
+    "explained_variance_ratio": 0.0009308436419814825,
+    "cumulative_explained_variance": 0.7769164338824339,
+    "converged": true
+  },
+  {
+    "subject_id": 104,
+    "method": "FastICA",
+    "latent_dim": 2,
+    "reconstruction": {
+      "mse": 0.549424,
+      "rmse": 0.741231
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.7695,
+      "knn_overlap": 0.148
+    },
+    "downstream_knn": {
+      "accuracy": 0.3033,
+      "balanced_accuracy": 0.2926,
+      "macro_f1": 0.2409,
+      "n_classes_test": 10
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 2,
+      "compression_ratio": 3456.0,
+      "latent_bytes_per_window": 8,
+      "param_count": 20740,
+      "model_size_kb": 81.02,
+      "encoding_latency_ms": 0.0382
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 104,
+    "method": "FastICA",
+    "latent_dim": 4,
+    "reconstruction": {
+      "mse": 0.477715,
+      "rmse": 0.691169
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.8333,
+      "knn_overlap": 0.2343
+    },
+    "downstream_knn": {
+      "accuracy": 0.6083,
+      "balanced_accuracy": 0.5858,
+      "macro_f1": 0.4872,
+      "n_classes_test": 10
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 4,
+      "compression_ratio": 1728.0,
+      "latent_bytes_per_window": 16,
+      "param_count": 34576,
+      "model_size_kb": 135.06,
+      "encoding_latency_ms": 0.0437
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 104,
+    "method": "FastICA",
+    "latent_dim": 8,
+    "reconstruction": {
+      "mse": 0.435903,
+      "rmse": 0.660229
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.8907,
+      "knn_overlap": 0.316
+    },
+    "downstream_knn": {
+      "accuracy": 0.6984,
+      "balanced_accuracy": 0.6893,
+      "macro_f1": 0.5625,
+      "n_classes_test": 10
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 8,
+      "compression_ratio": 864.0,
+      "latent_bytes_per_window": 32,
+      "param_count": 62272,
+      "model_size_kb": 243.25,
+      "encoding_latency_ms": 0.0288
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": false
+  },
+  {
+    "subject_id": 104,
+    "method": "FastICA",
+    "latent_dim": 16,
+    "reconstruction": {
+      "mse": 0.343253,
+      "rmse": 0.585878
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.9474,
+      "knn_overlap": 0.3657
+    },
+    "downstream_knn": {
+      "accuracy": 0.8422,
+      "balanced_accuracy": 0.8458,
+      "macro_f1": 0.7018,
+      "n_classes_test": 10
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 16,
+      "compression_ratio": 432.0,
+      "latent_bytes_per_window": 64,
+      "param_count": 117760,
+      "model_size_kb": 460.0,
+      "encoding_latency_ms": 0.0318
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 104,
+    "method": "FastICA",
+    "latent_dim": 32,
+    "reconstruction": {
+      "mse": 0.278636,
+      "rmse": 0.52786
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.9758,
+      "knn_overlap": 0.4959
+    },
+    "downstream_knn": {
+      "accuracy": 0.8114,
+      "balanced_accuracy": 0.801,
+      "macro_f1": 0.6649,
+      "n_classes_test": 10
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 32,
+      "compression_ratio": 216.0,
+      "latent_bytes_per_window": 128,
+      "param_count": 229120,
+      "model_size_kb": 895.0,
+      "encoding_latency_ms": 0.0326
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 104,
+    "method": "FastICA",
+    "latent_dim": 64,
+    "reconstruction": {
+      "mse": 0.205211,
+      "rmse": 0.453002
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.9808,
+      "knn_overlap": 0.5101
+    },
+    "downstream_knn": {
+      "accuracy": 0.7398,
+      "balanced_accuracy": 0.7226,
+      "macro_f1": 0.5843,
+      "n_classes_test": 10
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 64,
+      "compression_ratio": 108.0,
+      "latent_bytes_per_window": 256,
+      "param_count": 453376,
+      "model_size_kb": 1771.0,
+      "encoding_latency_ms": 0.0432
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 104,
+    "method": "Autoencoder",
+    "latent_dim": 4,
+    "reconstruction": {
+      "mse": 0.466653,
+      "rmse": 0.68312
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.8661,
+      "knn_overlap": 0.2243
+    },
+    "downstream_knn": {
+      "accuracy": 0.6189,
+      "balanced_accuracy": 0.6021,
+      "macro_f1": 0.4929,
+      "n_classes_test": 10
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 4,
+      "compression_ratio": 1728.0,
+      "latent_bytes_per_window": 16,
+      "param_count": 3549444,
+      "model_size_kb": 13865.02,
+      "encoding_latency_ms": 0.0443
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 104,
+    "method": "Autoencoder",
+    "latent_dim": 16,
+    "reconstruction": {
+      "mse": 0.299989,
+      "rmse": 0.547713
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.9653,
+      "knn_overlap": 0.4447
+    },
+    "downstream_knn": {
+      "accuracy": 0.822,
+      "balanced_accuracy": 0.8244,
+      "macro_f1": 0.7401,
+      "n_classes_test": 10
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 16,
+      "compression_ratio": 432.0,
+      "latent_bytes_per_window": 64,
+      "param_count": 3555600,
+      "model_size_kb": 13889.06,
+      "encoding_latency_ms": 0.0352
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 104,
+    "method": "Autoencoder",
+    "latent_dim": 64,
+    "reconstruction": {
+      "mse": 0.218685,
+      "rmse": 0.467637
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.9885,
+      "knn_overlap": 0.6022
+    },
+    "downstream_knn": {
+      "accuracy": 0.7851,
+      "balanced_accuracy": 0.7774,
+      "macro_f1": 0.6344,
+      "n_classes_test": 10
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 64,
+      "compression_ratio": 108.0,
+      "latent_bytes_per_window": 256,
+      "param_count": 3580224,
+      "model_size_kb": 13985.25,
+      "encoding_latency_ms": 0.0377
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 105,
+    "method": "Raw Baseline",
+    "latent_dim": 6912,
+    "reconstruction": {
+      "mse": 0.0,
+      "rmse": 0.0
+    },
+    "neighbourhood": {
+      "trustworthiness": 1.0,
+      "knn_overlap": 1.0
+    },
+    "downstream_knn": {
+      "accuracy": 0.602,
+      "balanced_accuracy": 0.5367,
+      "macro_f1": 0.5069,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 6912,
+      "compression_ratio": 1.0,
+      "latent_bytes_per_window": 27648,
+      "param_count": 0,
+      "model_size_kb": 0.0,
+      "encoding_latency_ms": 0.0
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 105,
+    "method": "PCA",
+    "latent_dim": 2,
+    "reconstruction": {
+      "mse": 0.874233,
+      "rmse": 0.935004
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.6889,
+      "knn_overlap": 0.1019
+    },
+    "downstream_knn": {
+      "accuracy": 0.3127,
+      "balanced_accuracy": 0.2637,
+      "macro_f1": 0.2447,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 2,
+      "compression_ratio": 3456.0,
+      "latent_bytes_per_window": 8,
+      "param_count": 20736,
+      "model_size_kb": 81.0,
+      "encoding_latency_ms": 0.0316
+    },
+    "explained_variance_ratio": 0.06264444440603256,
+    "cumulative_explained_variance": 0.20590440183877945,
+    "converged": true
+  },
+  {
+    "subject_id": 105,
+    "method": "PCA",
+    "latent_dim": 4,
+    "reconstruction": {
+      "mse": 0.813854,
+      "rmse": 0.902139
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.7482,
+      "knn_overlap": 0.1915
+    },
+    "downstream_knn": {
+      "accuracy": 0.5276,
+      "balanced_accuracy": 0.4782,
+      "macro_f1": 0.4642,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 4,
+      "compression_ratio": 1728.0,
+      "latent_bytes_per_window": 16,
+      "param_count": 34560,
+      "model_size_kb": 135.0,
+      "encoding_latency_ms": 0.028
+    },
+    "explained_variance_ratio": 0.03511740639805794,
+    "cumulative_explained_variance": 0.286083173006773,
+    "converged": true
+  },
+  {
+    "subject_id": 105,
+    "method": "PCA",
+    "latent_dim": 8,
+    "reconstruction": {
+      "mse": 0.714052,
+      "rmse": 0.845016
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.8795,
+      "knn_overlap": 0.2931
+    },
+    "downstream_knn": {
+      "accuracy": 0.724,
+      "balanced_accuracy": 0.6555,
+      "macro_f1": 0.643,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 8,
+      "compression_ratio": 864.0,
+      "latent_bytes_per_window": 32,
+      "param_count": 62208,
+      "model_size_kb": 243.0,
+      "encoding_latency_ms": 0.0246
+    },
+    "explained_variance_ratio": 0.02176656201481819,
+    "cumulative_explained_variance": 0.38141843117773533,
+    "converged": true
+  },
+  {
+    "subject_id": 105,
+    "method": "PCA",
+    "latent_dim": 16,
+    "reconstruction": {
+      "mse": 0.595456,
+      "rmse": 0.771658
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.9215,
+      "knn_overlap": 0.3521
+    },
+    "downstream_knn": {
+      "accuracy": 0.8036,
+      "balanced_accuracy": 0.7433,
+      "macro_f1": 0.7386,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 16,
+      "compression_ratio": 432.0,
+      "latent_bytes_per_window": 64,
+      "param_count": 117504,
+      "model_size_kb": 459.0,
+      "encoding_latency_ms": 0.025
+    },
+    "explained_variance_ratio": 0.009810443967580795,
+    "cumulative_explained_variance": 0.4955217847600579,
+    "converged": true
+  },
+  {
+    "subject_id": 105,
+    "method": "PCA",
+    "latent_dim": 32,
+    "reconstruction": {
+      "mse": 0.49616,
+      "rmse": 0.704386
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.9548,
+      "knn_overlap": 0.4199
+    },
+    "downstream_knn": {
+      "accuracy": 0.7908,
+      "balanced_accuracy": 0.763,
+      "macro_f1": 0.7699,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 32,
+      "compression_ratio": 216.0,
+      "latent_bytes_per_window": 128,
+      "param_count": 228096,
+      "model_size_kb": 891.0,
+      "encoding_latency_ms": 0.0311
+    },
+    "explained_variance_ratio": 0.0044805146753787994,
+    "cumulative_explained_variance": 0.5989233599975705,
+    "converged": true
+  },
+  {
+    "subject_id": 105,
+    "method": "PCA",
+    "latent_dim": 64,
+    "reconstruction": {
+      "mse": 0.383916,
+      "rmse": 0.619609
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.975,
+      "knn_overlap": 0.5501
+    },
+    "downstream_knn": {
+      "accuracy": 0.7674,
+      "balanced_accuracy": 0.7598,
+      "macro_f1": 0.7625,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 64,
+      "compression_ratio": 108.0,
+      "latent_bytes_per_window": 256,
+      "param_count": 449280,
+      "model_size_kb": 1755.0,
+      "encoding_latency_ms": 0.031
+    },
+    "explained_variance_ratio": 0.001929763238877058,
+    "cumulative_explained_variance": 0.6945988370571285,
+    "converged": true
+  },
+  {
+    "subject_id": 105,
+    "method": "PCA",
+    "latent_dim": 128,
+    "reconstruction": {
+      "mse": 0.28928,
+      "rmse": 0.537848
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.9866,
+      "knn_overlap": 0.6674
+    },
+    "downstream_knn": {
+      "accuracy": 0.7402,
+      "balanced_accuracy": 0.7267,
+      "macro_f1": 0.7278,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 128,
+      "compression_ratio": 54.0,
+      "latent_bytes_per_window": 512,
+      "param_count": 891648,
+      "model_size_kb": 3483.0,
+      "encoding_latency_ms": 0.039
+    },
+    "explained_variance_ratio": 0.0009241312509402633,
+    "cumulative_explained_variance": 0.7801546810660511,
+    "converged": true
+  },
+  {
+    "subject_id": 105,
+    "method": "FastICA",
+    "latent_dim": 2,
+    "reconstruction": {
+      "mse": 0.874233,
+      "rmse": 0.935004
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.6887,
+      "knn_overlap": 0.102
+    },
+    "downstream_knn": {
+      "accuracy": 0.3146,
+      "balanced_accuracy": 0.2648,
+      "macro_f1": 0.2444,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 2,
+      "compression_ratio": 3456.0,
+      "latent_bytes_per_window": 8,
+      "param_count": 20740,
+      "model_size_kb": 81.02,
+      "encoding_latency_ms": 0.0371
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 105,
+    "method": "FastICA",
+    "latent_dim": 4,
+    "reconstruction": {
+      "mse": 0.813854,
+      "rmse": 0.902139
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.7468,
+      "knn_overlap": 0.1832
+    },
+    "downstream_knn": {
+      "accuracy": 0.5253,
+      "balanced_accuracy": 0.4734,
+      "macro_f1": 0.4617,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 4,
+      "compression_ratio": 1728.0,
+      "latent_bytes_per_window": 16,
+      "param_count": 34576,
+      "model_size_kb": 135.06,
+      "encoding_latency_ms": 0.0284
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 105,
+    "method": "FastICA",
+    "latent_dim": 8,
+    "reconstruction": {
+      "mse": 0.714053,
+      "rmse": 0.845017
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.8954,
+      "knn_overlap": 0.3147
+    },
+    "downstream_knn": {
+      "accuracy": 0.7235,
+      "balanced_accuracy": 0.6552,
+      "macro_f1": 0.643,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 8,
+      "compression_ratio": 864.0,
+      "latent_bytes_per_window": 32,
+      "param_count": 62272,
+      "model_size_kb": 243.25,
+      "encoding_latency_ms": 0.0291
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 105,
+    "method": "FastICA",
+    "latent_dim": 16,
+    "reconstruction": {
+      "mse": 0.595463,
+      "rmse": 0.771663
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.9301,
+      "knn_overlap": 0.3834
+    },
+    "downstream_knn": {
+      "accuracy": 0.7989,
+      "balanced_accuracy": 0.775,
+      "macro_f1": 0.7775,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 16,
+      "compression_ratio": 432.0,
+      "latent_bytes_per_window": 64,
+      "param_count": 117760,
+      "model_size_kb": 460.0,
+      "encoding_latency_ms": 0.0313
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 105,
+    "method": "FastICA",
+    "latent_dim": 32,
+    "reconstruction": {
+      "mse": 0.496227,
+      "rmse": 0.704434
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.9645,
+      "knn_overlap": 0.4563
+    },
+    "downstream_knn": {
+      "accuracy": 0.7288,
+      "balanced_accuracy": 0.7153,
+      "macro_f1": 0.713,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 32,
+      "compression_ratio": 216.0,
+      "latent_bytes_per_window": 128,
+      "param_count": 229120,
+      "model_size_kb": 895.0,
+      "encoding_latency_ms": 0.0401
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 105,
+    "method": "FastICA",
+    "latent_dim": 64,
+    "reconstruction": {
+      "mse": 0.384009,
+      "rmse": 0.619685
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.9718,
+      "knn_overlap": 0.5038
+    },
+    "downstream_knn": {
+      "accuracy": 0.7011,
+      "balanced_accuracy": 0.705,
+      "macro_f1": 0.6987,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 64,
+      "compression_ratio": 108.0,
+      "latent_bytes_per_window": 256,
+      "param_count": 453376,
+      "model_size_kb": 1771.0,
+      "encoding_latency_ms": 0.047
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 105,
+    "method": "Autoencoder",
+    "latent_dim": 4,
+    "reconstruction": {
+      "mse": 0.767164,
+      "rmse": 0.875879
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.8139,
+      "knn_overlap": 0.237
+    },
+    "downstream_knn": {
+      "accuracy": 0.5467,
+      "balanced_accuracy": 0.4849,
+      "macro_f1": 0.4841,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 4,
+      "compression_ratio": 1728.0,
+      "latent_bytes_per_window": 16,
+      "param_count": 3549444,
+      "model_size_kb": 13865.02,
+      "encoding_latency_ms": 0.039
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 105,
+    "method": "Autoencoder",
+    "latent_dim": 16,
+    "reconstruction": {
+      "mse": 0.555005,
+      "rmse": 0.744987
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.9464,
+      "knn_overlap": 0.4105
+    },
+    "downstream_knn": {
+      "accuracy": 0.8227,
+      "balanced_accuracy": 0.7709,
+      "macro_f1": 0.7786,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 16,
+      "compression_ratio": 432.0,
+      "latent_bytes_per_window": 64,
+      "param_count": 3555600,
+      "model_size_kb": 13889.06,
+      "encoding_latency_ms": 0.0592
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 105,
+    "method": "Autoencoder",
+    "latent_dim": 64,
+    "reconstruction": {
+      "mse": 0.430212,
+      "rmse": 0.655906
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.979,
+      "knn_overlap": 0.5619
+    },
+    "downstream_knn": {
+      "accuracy": 0.7498,
+      "balanced_accuracy": 0.7383,
+      "macro_f1": 0.7401,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 64,
+      "compression_ratio": 108.0,
+      "latent_bytes_per_window": 256,
+      "param_count": 3580224,
+      "model_size_kb": 13985.25,
+      "encoding_latency_ms": 0.0429
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 106,
+    "method": "Raw Baseline",
+    "latent_dim": 6912,
+    "reconstruction": {
+      "mse": 0.0,
+      "rmse": 0.0
+    },
+    "neighbourhood": {
+      "trustworthiness": 1.0,
+      "knn_overlap": 1.0
+    },
+    "downstream_knn": {
+      "accuracy": 0.6969,
+      "balanced_accuracy": 0.6765,
+      "macro_f1": 0.594,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 6912,
+      "compression_ratio": 1.0,
+      "latent_bytes_per_window": 27648,
+      "param_count": 0,
+      "model_size_kb": 0.0,
+      "encoding_latency_ms": 0.0
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 106,
+    "method": "PCA",
+    "latent_dim": 2,
+    "reconstruction": {
+      "mse": 1.0604,
+      "rmse": 1.029757
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.6969,
+      "knn_overlap": 0.121
+    },
+    "downstream_knn": {
+      "accuracy": 0.3269,
+      "balanced_accuracy": 0.2678,
+      "macro_f1": 0.2549,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 2,
+      "compression_ratio": 3456.0,
+      "latent_bytes_per_window": 8,
+      "param_count": 20736,
+      "model_size_kb": 81.0,
+      "encoding_latency_ms": 0.0373
+    },
+    "explained_variance_ratio": 0.061449259519577026,
+    "cumulative_explained_variance": 0.20212282240390778,
+    "converged": true
+  },
+  {
+    "subject_id": 106,
+    "method": "PCA",
+    "latent_dim": 4,
+    "reconstruction": {
+      "mse": 1.009305,
+      "rmse": 1.004642
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.7299,
+      "knn_overlap": 0.168
+    },
+    "downstream_knn": {
+      "accuracy": 0.5231,
+      "balanced_accuracy": 0.4605,
+      "macro_f1": 0.4596,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 4,
+      "compression_ratio": 1728.0,
+      "latent_bytes_per_window": 16,
+      "param_count": 34560,
+      "model_size_kb": 135.0,
+      "encoding_latency_ms": 0.0414
+    },
+    "explained_variance_ratio": 0.036482833325862885,
+    "cumulative_explained_variance": 0.2848514951765537,
+    "converged": true
+  },
+  {
+    "subject_id": 106,
+    "method": "PCA",
+    "latent_dim": 8,
+    "reconstruction": {
+      "mse": 0.91292,
+      "rmse": 0.955469
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.8517,
+      "knn_overlap": 0.278
+    },
+    "downstream_knn": {
+      "accuracy": 0.7743,
+      "balanced_accuracy": 0.7655,
+      "macro_f1": 0.6798,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 8,
+      "compression_ratio": 864.0,
+      "latent_bytes_per_window": 32,
+      "param_count": 62208,
+      "model_size_kb": 243.0,
+      "encoding_latency_ms": 0.0383
+    },
+    "explained_variance_ratio": 0.021862678229808807,
+    "cumulative_explained_variance": 0.38121360540390015,
+    "converged": true
+  },
+  {
+    "subject_id": 106,
+    "method": "PCA",
+    "latent_dim": 16,
+    "reconstruction": {
+      "mse": 0.735085,
+      "rmse": 0.857371
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.9115,
+      "knn_overlap": 0.3392
+    },
+    "downstream_knn": {
+      "accuracy": 0.8365,
+      "balanced_accuracy": 0.752,
+      "macro_f1": 0.739,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 16,
+      "compression_ratio": 432.0,
+      "latent_bytes_per_window": 64,
+      "param_count": 117504,
+      "model_size_kb": 459.0,
+      "encoding_latency_ms": 0.0326
+    },
+    "explained_variance_ratio": 0.010210971347987652,
+    "cumulative_explained_variance": 0.49213866144418716,
+    "converged": true
+  },
+  {
+    "subject_id": 106,
+    "method": "PCA",
+    "latent_dim": 32,
+    "reconstruction": {
+      "mse": 0.628289,
+      "rmse": 0.792647
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.9339,
+      "knn_overlap": 0.393
+    },
+    "downstream_knn": {
+      "accuracy": 0.8422,
+      "balanced_accuracy": 0.7554,
+      "macro_f1": 0.7456,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 32,
+      "compression_ratio": 216.0,
+      "latent_bytes_per_window": 128,
+      "param_count": 228096,
+      "model_size_kb": 891.0,
+      "encoding_latency_ms": 0.041
+    },
+    "explained_variance_ratio": 0.004737682640552521,
+    "cumulative_explained_variance": 0.5982350916601717,
+    "converged": true
+  },
+  {
+    "subject_id": 106,
+    "method": "PCA",
+    "latent_dim": 64,
+    "reconstruction": {
+      "mse": 0.516721,
+      "rmse": 0.718833
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.9565,
+      "knn_overlap": 0.4875
+    },
+    "downstream_knn": {
+      "accuracy": 0.8075,
+      "balanced_accuracy": 0.8011,
+      "macro_f1": 0.7551,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 64,
+      "compression_ratio": 108.0,
+      "latent_bytes_per_window": 256,
+      "param_count": 449280,
+      "model_size_kb": 1755.0,
+      "encoding_latency_ms": 0.0465
+    },
+    "explained_variance_ratio": 0.002048847731202841,
+    "cumulative_explained_variance": 0.6980998471844941,
+    "converged": true
+  },
+  {
+    "subject_id": 106,
+    "method": "PCA",
+    "latent_dim": 128,
+    "reconstruction": {
+      "mse": 0.422483,
+      "rmse": 0.649987
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.9688,
+      "knn_overlap": 0.5915
+    },
+    "downstream_knn": {
+      "accuracy": 0.7758,
+      "balanced_accuracy": 0.7636,
+      "macro_f1": 0.7409,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 128,
+      "compression_ratio": 54.0,
+      "latent_bytes_per_window": 512,
+      "param_count": 891648,
+      "model_size_kb": 3483.0,
+      "encoding_latency_ms": 0.0546
+    },
+    "explained_variance_ratio": 0.0009571900591254234,
+    "cumulative_explained_variance": 0.7864822942065075,
+    "converged": true
+  },
+  {
+    "subject_id": 106,
+    "method": "FastICA",
+    "latent_dim": 2,
+    "reconstruction": {
+      "mse": 1.0604,
+      "rmse": 1.029757
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.6913,
+      "knn_overlap": 0.1231
+    },
+    "downstream_knn": {
+      "accuracy": 0.3171,
+      "balanced_accuracy": 0.2566,
+      "macro_f1": 0.2436,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 2,
+      "compression_ratio": 3456.0,
+      "latent_bytes_per_window": 8,
+      "param_count": 20740,
+      "model_size_kb": 81.02,
+      "encoding_latency_ms": 0.0343
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 106,
+    "method": "FastICA",
+    "latent_dim": 4,
+    "reconstruction": {
+      "mse": 1.009305,
+      "rmse": 1.004642
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.7294,
+      "knn_overlap": 0.1679
+    },
+    "downstream_knn": {
+      "accuracy": 0.547,
+      "balanced_accuracy": 0.4805,
+      "macro_f1": 0.4788,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 4,
+      "compression_ratio": 1728.0,
+      "latent_bytes_per_window": 16,
+      "param_count": 34576,
+      "model_size_kb": 135.06,
+      "encoding_latency_ms": 0.0406
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 106,
+    "method": "FastICA",
+    "latent_dim": 8,
+    "reconstruction": {
+      "mse": 0.912922,
+      "rmse": 0.95547
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.8645,
+      "knn_overlap": 0.2873
+    },
+    "downstream_knn": {
+      "accuracy": 0.753,
+      "balanced_accuracy": 0.7422,
+      "macro_f1": 0.6564,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 8,
+      "compression_ratio": 864.0,
+      "latent_bytes_per_window": 32,
+      "param_count": 62272,
+      "model_size_kb": 243.25,
+      "encoding_latency_ms": 0.0393
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 106,
+    "method": "FastICA",
+    "latent_dim": 16,
+    "reconstruction": {
+      "mse": 0.735074,
+      "rmse": 0.857364
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.9156,
+      "knn_overlap": 0.352
+    },
+    "downstream_knn": {
+      "accuracy": 0.8386,
+      "balanced_accuracy": 0.7518,
+      "macro_f1": 0.7421,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 16,
+      "compression_ratio": 432.0,
+      "latent_bytes_per_window": 64,
+      "param_count": 117760,
+      "model_size_kb": 460.0,
+      "encoding_latency_ms": 0.0419
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 106,
+    "method": "FastICA",
+    "latent_dim": 32,
+    "reconstruction": {
+      "mse": 0.628212,
+      "rmse": 0.792598
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.9413,
+      "knn_overlap": 0.397
+    },
+    "downstream_knn": {
+      "accuracy": 0.8329,
+      "balanced_accuracy": 0.7448,
+      "macro_f1": 0.74,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 32,
+      "compression_ratio": 216.0,
+      "latent_bytes_per_window": 128,
+      "param_count": 229120,
+      "model_size_kb": 895.0,
+      "encoding_latency_ms": 0.0414
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 106,
+    "method": "FastICA",
+    "latent_dim": 64,
+    "reconstruction": {
+      "mse": 0.517912,
+      "rmse": 0.719661
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.9559,
+      "knn_overlap": 0.4296
+    },
+    "downstream_knn": {
+      "accuracy": 0.725,
+      "balanced_accuracy": 0.6408,
+      "macro_f1": 0.6331,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 64,
+      "compression_ratio": 108.0,
+      "latent_bytes_per_window": 256,
+      "param_count": 453376,
+      "model_size_kb": 1771.0,
+      "encoding_latency_ms": 0.047
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 106,
+    "method": "Autoencoder",
+    "latent_dim": 4,
+    "reconstruction": {
+      "mse": 0.93839,
+      "rmse": 0.968705
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.795,
+      "knn_overlap": 0.2151
+    },
+    "downstream_knn": {
+      "accuracy": 0.6092,
+      "balanced_accuracy": 0.6111,
+      "macro_f1": 0.5299,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 4,
+      "compression_ratio": 1728.0,
+      "latent_bytes_per_window": 16,
+      "param_count": 3549444,
+      "model_size_kb": 13865.02,
+      "encoding_latency_ms": 0.0431
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 106,
+    "method": "Autoencoder",
+    "latent_dim": 16,
+    "reconstruction": {
+      "mse": 0.636872,
+      "rmse": 0.798042
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.9323,
+      "knn_overlap": 0.3778
+    },
+    "downstream_knn": {
+      "accuracy": 0.8127,
+      "balanced_accuracy": 0.813,
+      "macro_f1": 0.7958,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 16,
+      "compression_ratio": 432.0,
+      "latent_bytes_per_window": 64,
+      "param_count": 3555600,
+      "model_size_kb": 13889.06,
+      "encoding_latency_ms": 0.0423
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 106,
+    "method": "Autoencoder",
+    "latent_dim": 64,
+    "reconstruction": {
+      "mse": 0.52983,
+      "rmse": 0.727895
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.9635,
+      "knn_overlap": 0.5002
+    },
+    "downstream_knn": {
+      "accuracy": 0.7722,
+      "balanced_accuracy": 0.7608,
+      "macro_f1": 0.7486,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 64,
+      "compression_ratio": 108.0,
+      "latent_bytes_per_window": 256,
+      "param_count": 3580224,
+      "model_size_kb": 13985.25,
+      "encoding_latency_ms": 0.0311
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 107,
+    "method": "Raw Baseline",
+    "latent_dim": 6912,
+    "reconstruction": {
+      "mse": 0.0,
+      "rmse": 0.0
+    },
+    "neighbourhood": {
+      "trustworthiness": 1.0,
+      "knn_overlap": 1.0
+    },
+    "downstream_knn": {
+      "accuracy": 0.7007,
+      "balanced_accuracy": 0.6506,
+      "macro_f1": 0.5658,
+      "n_classes_test": 11
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 6912,
+      "compression_ratio": 1.0,
+      "latent_bytes_per_window": 27648,
+      "param_count": 0,
+      "model_size_kb": 0.0,
+      "encoding_latency_ms": 0.0
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 107,
+    "method": "PCA",
+    "latent_dim": 2,
+    "reconstruction": {
+      "mse": 0.66859,
+      "rmse": 0.817674
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.7227,
+      "knn_overlap": 0.1333
+    },
+    "downstream_knn": {
+      "accuracy": 0.3774,
+      "balanced_accuracy": 0.3219,
+      "macro_f1": 0.287,
+      "n_classes_test": 11
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 2,
+      "compression_ratio": 3456.0,
+      "latent_bytes_per_window": 8,
+      "param_count": 20736,
+      "model_size_kb": 81.0,
+      "encoding_latency_ms": 0.0281
+    },
+    "explained_variance_ratio": 0.06275422126054764,
+    "cumulative_explained_variance": 0.20051292330026627,
+    "converged": true
+  },
+  {
+    "subject_id": 107,
+    "method": "PCA",
+    "latent_dim": 4,
+    "reconstruction": {
+      "mse": 0.595241,
+      "rmse": 0.771518
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.7732,
+      "knn_overlap": 0.2006
+    },
+    "downstream_knn": {
+      "accuracy": 0.6667,
+      "balanced_accuracy": 0.5794,
+      "macro_f1": 0.5225,
+      "n_classes_test": 11
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 4,
+      "compression_ratio": 1728.0,
+      "latent_bytes_per_window": 16,
+      "param_count": 34560,
+      "model_size_kb": 135.0,
+      "encoding_latency_ms": 0.0236
+    },
+    "explained_variance_ratio": 0.0340525358915329,
+    "cumulative_explained_variance": 0.27778834477066994,
+    "converged": true
+  },
+  {
+    "subject_id": 107,
+    "method": "PCA",
+    "latent_dim": 8,
+    "reconstruction": {
+      "mse": 0.532474,
+      "rmse": 0.729708
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.8542,
+      "knn_overlap": 0.2861
+    },
+    "downstream_knn": {
+      "accuracy": 0.7999,
+      "balanced_accuracy": 0.7529,
+      "macro_f1": 0.6913,
+      "n_classes_test": 11
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 8,
+      "compression_ratio": 864.0,
+      "latent_bytes_per_window": 32,
+      "param_count": 62208,
+      "model_size_kb": 243.0,
+      "encoding_latency_ms": 0.0292
+    },
+    "explained_variance_ratio": 0.021307852119207382,
+    "cumulative_explained_variance": 0.37545012310147285,
+    "converged": true
+  },
+  {
+    "subject_id": 107,
+    "method": "PCA",
+    "latent_dim": 16,
+    "reconstruction": {
+      "mse": 0.438634,
+      "rmse": 0.662294
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.9164,
+      "knn_overlap": 0.361
+    },
+    "downstream_knn": {
+      "accuracy": 0.9326,
+      "balanced_accuracy": 0.902,
+      "macro_f1": 0.8346,
+      "n_classes_test": 11
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 16,
+      "compression_ratio": 432.0,
+      "latent_bytes_per_window": 64,
+      "param_count": 117504,
+      "model_size_kb": 459.0,
+      "encoding_latency_ms": 0.0273
+    },
+    "explained_variance_ratio": 0.010088718496263027,
+    "cumulative_explained_variance": 0.49070684518665075,
+    "converged": true
+  },
+  {
+    "subject_id": 107,
+    "method": "PCA",
+    "latent_dim": 32,
+    "reconstruction": {
+      "mse": 0.366436,
+      "rmse": 0.60534
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.9476,
+      "knn_overlap": 0.4215
+    },
+    "downstream_knn": {
+      "accuracy": 0.9142,
+      "balanced_accuracy": 0.8833,
+      "macro_f1": 0.8178,
+      "n_classes_test": 11
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 32,
+      "compression_ratio": 216.0,
+      "latent_bytes_per_window": 128,
+      "param_count": 228096,
+      "model_size_kb": 891.0,
+      "encoding_latency_ms": 0.029
+    },
+    "explained_variance_ratio": 0.004591310862451792,
+    "cumulative_explained_variance": 0.5938254524953663,
+    "converged": true
+  },
+  {
+    "subject_id": 107,
+    "method": "PCA",
+    "latent_dim": 64,
+    "reconstruction": {
+      "mse": 0.285666,
+      "rmse": 0.534478
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.962,
+      "knn_overlap": 0.5145
+    },
+    "downstream_knn": {
+      "accuracy": 0.8506,
+      "balanced_accuracy": 0.8227,
+      "macro_f1": 0.7533,
+      "n_classes_test": 11
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 64,
+      "compression_ratio": 108.0,
+      "latent_bytes_per_window": 256,
+      "param_count": 449280,
+      "model_size_kb": 1755.0,
+      "encoding_latency_ms": 0.0294
+    },
+    "explained_variance_ratio": 0.0020129457116127014,
+    "cumulative_explained_variance": 0.6912515501026064,
+    "converged": true
+  },
+  {
+    "subject_id": 107,
+    "method": "PCA",
+    "latent_dim": 128,
+    "reconstruction": {
+      "mse": 0.229468,
+      "rmse": 0.479028
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.9753,
+      "knn_overlap": 0.6149
+    },
+    "downstream_knn": {
+      "accuracy": 0.7993,
+      "balanced_accuracy": 0.7669,
+      "macro_f1": 0.6919,
+      "n_classes_test": 11
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 128,
+      "compression_ratio": 54.0,
+      "latent_bytes_per_window": 512,
+      "param_count": 891648,
+      "model_size_kb": 3483.0,
+      "encoding_latency_ms": 0.0375
+    },
+    "explained_variance_ratio": 0.0009389502229169011,
+    "cumulative_explained_variance": 0.7792825215146877,
+    "converged": true
+  },
+  {
+    "subject_id": 107,
+    "method": "FastICA",
+    "latent_dim": 2,
+    "reconstruction": {
+      "mse": 0.66859,
+      "rmse": 0.817674
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.7192,
+      "knn_overlap": 0.1273
+    },
+    "downstream_knn": {
+      "accuracy": 0.3896,
+      "balanced_accuracy": 0.3346,
+      "macro_f1": 0.2985,
+      "n_classes_test": 11
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 2,
+      "compression_ratio": 3456.0,
+      "latent_bytes_per_window": 8,
+      "param_count": 20740,
+      "model_size_kb": 81.02,
+      "encoding_latency_ms": 0.0319
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 107,
+    "method": "FastICA",
+    "latent_dim": 4,
+    "reconstruction": {
+      "mse": 0.59524,
+      "rmse": 0.771518
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.7738,
+      "knn_overlap": 0.1915
+    },
+    "downstream_knn": {
+      "accuracy": 0.6778,
+      "balanced_accuracy": 0.5873,
+      "macro_f1": 0.5325,
+      "n_classes_test": 11
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 4,
+      "compression_ratio": 1728.0,
+      "latent_bytes_per_window": 16,
+      "param_count": 34576,
+      "model_size_kb": 135.06,
+      "encoding_latency_ms": 0.0277
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 107,
+    "method": "FastICA",
+    "latent_dim": 8,
+    "reconstruction": {
+      "mse": 0.53247,
+      "rmse": 0.729705
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.8636,
+      "knn_overlap": 0.2986
+    },
+    "downstream_knn": {
+      "accuracy": 0.7965,
+      "balanced_accuracy": 0.7502,
+      "macro_f1": 0.6857,
+      "n_classes_test": 11
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 8,
+      "compression_ratio": 864.0,
+      "latent_bytes_per_window": 32,
+      "param_count": 62272,
+      "model_size_kb": 243.25,
+      "encoding_latency_ms": 0.027
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 107,
+    "method": "FastICA",
+    "latent_dim": 16,
+    "reconstruction": {
+      "mse": 0.438637,
+      "rmse": 0.662297
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.919,
+      "knn_overlap": 0.3653
+    },
+    "downstream_knn": {
+      "accuracy": 0.9292,
+      "balanced_accuracy": 0.9013,
+      "macro_f1": 0.8346,
+      "n_classes_test": 11
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 16,
+      "compression_ratio": 432.0,
+      "latent_bytes_per_window": 64,
+      "param_count": 117760,
+      "model_size_kb": 460.0,
+      "encoding_latency_ms": 0.0346
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 107,
+    "method": "FastICA",
+    "latent_dim": 32,
+    "reconstruction": {
+      "mse": 0.366423,
+      "rmse": 0.605329
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.9528,
+      "knn_overlap": 0.4521
+    },
+    "downstream_knn": {
+      "accuracy": 0.869,
+      "balanced_accuracy": 0.8469,
+      "macro_f1": 0.7855,
+      "n_classes_test": 11
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 32,
+      "compression_ratio": 216.0,
+      "latent_bytes_per_window": 128,
+      "param_count": 229120,
+      "model_size_kb": 895.0,
+      "encoding_latency_ms": 0.0321
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 107,
+    "method": "FastICA",
+    "latent_dim": 64,
+    "reconstruction": {
+      "mse": 0.285813,
+      "rmse": 0.534615
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.9634,
+      "knn_overlap": 0.47
+    },
+    "downstream_knn": {
+      "accuracy": 0.714,
+      "balanced_accuracy": 0.7105,
+      "macro_f1": 0.6317,
+      "n_classes_test": 11
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 64,
+      "compression_ratio": 108.0,
+      "latent_bytes_per_window": 256,
+      "param_count": 453376,
+      "model_size_kb": 1771.0,
+      "encoding_latency_ms": 0.0456
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 107,
+    "method": "Autoencoder",
+    "latent_dim": 4,
+    "reconstruction": {
+      "mse": 0.546338,
+      "rmse": 0.739147
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.8416,
+      "knn_overlap": 0.2488
+    },
+    "downstream_knn": {
+      "accuracy": 0.6399,
+      "balanced_accuracy": 0.6284,
+      "macro_f1": 0.5378,
+      "n_classes_test": 11
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 4,
+      "compression_ratio": 1728.0,
+      "latent_bytes_per_window": 16,
+      "param_count": 3549444,
+      "model_size_kb": 13865.02,
+      "encoding_latency_ms": 0.0305
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 107,
+    "method": "Autoencoder",
+    "latent_dim": 16,
+    "reconstruction": {
+      "mse": 0.384097,
+      "rmse": 0.619755
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.9504,
+      "knn_overlap": 0.4308
+    },
+    "downstream_knn": {
+      "accuracy": 0.8946,
+      "balanced_accuracy": 0.8852,
+      "macro_f1": 0.8907,
+      "n_classes_test": 11
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 16,
+      "compression_ratio": 432.0,
+      "latent_bytes_per_window": 64,
+      "param_count": 3555600,
+      "model_size_kb": 13889.06,
+      "encoding_latency_ms": 0.0431
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 107,
+    "method": "Autoencoder",
+    "latent_dim": 64,
+    "reconstruction": {
+      "mse": 0.305311,
+      "rmse": 0.552549
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.9688,
+      "knn_overlap": 0.5433
+    },
+    "downstream_knn": {
+      "accuracy": 0.8283,
+      "balanced_accuracy": 0.8063,
+      "macro_f1": 0.7401,
+      "n_classes_test": 11
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 64,
+      "compression_ratio": 108.0,
+      "latent_bytes_per_window": 256,
+      "param_count": 3580224,
+      "model_size_kb": 13985.25,
+      "encoding_latency_ms": 0.0424
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 108,
+    "method": "Raw Baseline",
+    "latent_dim": 6912,
+    "reconstruction": {
+      "mse": 0.0,
+      "rmse": 0.0
+    },
+    "neighbourhood": {
+      "trustworthiness": 1.0,
+      "knn_overlap": 1.0
+    },
+    "downstream_knn": {
+      "accuracy": 0.297,
+      "balanced_accuracy": 0.2691,
+      "macro_f1": 0.2254,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 6912,
+      "compression_ratio": 1.0,
+      "latent_bytes_per_window": 27648,
+      "param_count": 0,
+      "model_size_kb": 0.0,
+      "encoding_latency_ms": 0.0
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 108,
+    "method": "PCA",
+    "latent_dim": 2,
+    "reconstruction": {
+      "mse": 1.245029,
+      "rmse": 1.115809
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.6789,
+      "knn_overlap": 0.1359
+    },
+    "downstream_knn": {
+      "accuracy": 0.1871,
+      "balanced_accuracy": 0.17,
+      "macro_f1": 0.1574,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 2,
+      "compression_ratio": 3456.0,
+      "latent_bytes_per_window": 8,
+      "param_count": 20736,
+      "model_size_kb": 81.0,
+      "encoding_latency_ms": 0.041
+    },
+    "explained_variance_ratio": 0.06859970837831497,
+    "cumulative_explained_variance": 0.21678515523672104,
+    "converged": true
+  },
+  {
+    "subject_id": 108,
+    "method": "PCA",
+    "latent_dim": 4,
+    "reconstruction": {
+      "mse": 1.199895,
+      "rmse": 1.095397
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.7171,
+      "knn_overlap": 0.188
+    },
+    "downstream_knn": {
+      "accuracy": 0.3163,
+      "balanced_accuracy": 0.2825,
+      "macro_f1": 0.2603,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 4,
+      "compression_ratio": 1728.0,
+      "latent_bytes_per_window": 16,
+      "param_count": 34560,
+      "model_size_kb": 135.0,
+      "encoding_latency_ms": 0.0359
+    },
+    "explained_variance_ratio": 0.03196098282933235,
+    "cumulative_explained_variance": 0.29492152109742165,
+    "converged": true
+  },
+  {
+    "subject_id": 108,
+    "method": "PCA",
+    "latent_dim": 8,
+    "reconstruction": {
+      "mse": 1.085289,
+      "rmse": 1.041772
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.8351,
+      "knn_overlap": 0.2893
+    },
+    "downstream_knn": {
+      "accuracy": 0.4297,
+      "balanced_accuracy": 0.3672,
+      "macro_f1": 0.3375,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 8,
+      "compression_ratio": 864.0,
+      "latent_bytes_per_window": 32,
+      "param_count": 62208,
+      "model_size_kb": 243.0,
+      "encoding_latency_ms": 0.0337
+    },
+    "explained_variance_ratio": 0.02403983473777771,
+    "cumulative_explained_variance": 0.3952001482248306,
+    "converged": true
+  },
+  {
+    "subject_id": 108,
+    "method": "PCA",
+    "latent_dim": 16,
+    "reconstruction": {
+      "mse": 1.002968,
+      "rmse": 1.001483
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.8932,
+      "knn_overlap": 0.3542
+    },
+    "downstream_knn": {
+      "accuracy": 0.3708,
+      "balanced_accuracy": 0.3434,
+      "macro_f1": 0.2926,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 16,
+      "compression_ratio": 432.0,
+      "latent_bytes_per_window": 64,
+      "param_count": 117504,
+      "model_size_kb": 459.0,
+      "encoding_latency_ms": 0.0291
+    },
+    "explained_variance_ratio": 0.011286703869700432,
+    "cumulative_explained_variance": 0.5173342144116759,
+    "converged": true
+  },
+  {
+    "subject_id": 108,
+    "method": "PCA",
+    "latent_dim": 32,
+    "reconstruction": {
+      "mse": 0.850826,
+      "rmse": 0.922402
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.9246,
+      "knn_overlap": 0.4064
+    },
+    "downstream_knn": {
+      "accuracy": 0.3455,
+      "balanced_accuracy": 0.3273,
+      "macro_f1": 0.2993,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 32,
+      "compression_ratio": 216.0,
+      "latent_bytes_per_window": 128,
+      "param_count": 228096,
+      "model_size_kb": 891.0,
+      "encoding_latency_ms": 0.0393
+    },
+    "explained_variance_ratio": 0.0043904734775424,
+    "cumulative_explained_variance": 0.6132422825321555,
+    "converged": true
+  },
+  {
+    "subject_id": 108,
+    "method": "PCA",
+    "latent_dim": 64,
+    "reconstruction": {
+      "mse": 0.666539,
+      "rmse": 0.816419
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.9551,
+      "knn_overlap": 0.5065
+    },
+    "downstream_knn": {
+      "accuracy": 0.3391,
+      "balanced_accuracy": 0.3165,
+      "macro_f1": 0.2783,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 64,
+      "compression_ratio": 108.0,
+      "latent_bytes_per_window": 256,
+      "param_count": 449280,
+      "model_size_kb": 1755.0,
+      "encoding_latency_ms": 0.0359
+    },
+    "explained_variance_ratio": 0.001999244326725602,
+    "cumulative_explained_variance": 0.7036472791805863,
+    "converged": true
+  },
+  {
+    "subject_id": 108,
+    "method": "PCA",
+    "latent_dim": 128,
+    "reconstruction": {
+      "mse": 0.52993,
+      "rmse": 0.727963
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.9689,
+      "knn_overlap": 0.5977
+    },
+    "downstream_knn": {
+      "accuracy": 0.3139,
+      "balanced_accuracy": 0.2848,
+      "macro_f1": 0.238,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 128,
+      "compression_ratio": 54.0,
+      "latent_bytes_per_window": 512,
+      "param_count": 891648,
+      "model_size_kb": 3483.0,
+      "encoding_latency_ms": 0.0426
+    },
+    "explained_variance_ratio": 0.0009204286034218967,
+    "cumulative_explained_variance": 0.7890018281759694,
+    "converged": true
+  },
+  {
+    "subject_id": 108,
+    "method": "FastICA",
+    "latent_dim": 2,
+    "reconstruction": {
+      "mse": 1.245029,
+      "rmse": 1.115809
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.6807,
+      "knn_overlap": 0.1377
+    },
+    "downstream_knn": {
+      "accuracy": 0.1911,
+      "balanced_accuracy": 0.1759,
+      "macro_f1": 0.1647,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 2,
+      "compression_ratio": 3456.0,
+      "latent_bytes_per_window": 8,
+      "param_count": 20740,
+      "model_size_kb": 81.02,
+      "encoding_latency_ms": 0.0354
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 108,
+    "method": "FastICA",
+    "latent_dim": 4,
+    "reconstruction": {
+      "mse": 1.199891,
+      "rmse": 1.095395
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.7196,
+      "knn_overlap": 0.1752
+    },
+    "downstream_knn": {
+      "accuracy": 0.3144,
+      "balanced_accuracy": 0.2794,
+      "macro_f1": 0.2641,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 4,
+      "compression_ratio": 1728.0,
+      "latent_bytes_per_window": 16,
+      "param_count": 34576,
+      "model_size_kb": 135.06,
+      "encoding_latency_ms": 0.0443
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 108,
+    "method": "FastICA",
+    "latent_dim": 8,
+    "reconstruction": {
+      "mse": 1.085289,
+      "rmse": 1.041772
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.8424,
+      "knn_overlap": 0.2897
+    },
+    "downstream_knn": {
+      "accuracy": 0.4183,
+      "balanced_accuracy": 0.3609,
+      "macro_f1": 0.3453,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 8,
+      "compression_ratio": 864.0,
+      "latent_bytes_per_window": 32,
+      "param_count": 62272,
+      "model_size_kb": 243.25,
+      "encoding_latency_ms": 0.0363
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 108,
+    "method": "FastICA",
+    "latent_dim": 16,
+    "reconstruction": {
+      "mse": 1.002972,
+      "rmse": 1.001485
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.9036,
+      "knn_overlap": 0.3642
+    },
+    "downstream_knn": {
+      "accuracy": 0.3163,
+      "balanced_accuracy": 0.2982,
+      "macro_f1": 0.2583,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 16,
+      "compression_ratio": 432.0,
+      "latent_bytes_per_window": 64,
+      "param_count": 117760,
+      "model_size_kb": 460.0,
+      "encoding_latency_ms": 0.0394
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 108,
+    "method": "FastICA",
+    "latent_dim": 32,
+    "reconstruction": {
+      "mse": 0.851245,
+      "rmse": 0.922629
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.9291,
+      "knn_overlap": 0.3931
+    },
+    "downstream_knn": {
+      "accuracy": 0.2277,
+      "balanced_accuracy": 0.2201,
+      "macro_f1": 0.2007,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 32,
+      "compression_ratio": 216.0,
+      "latent_bytes_per_window": 128,
+      "param_count": 229120,
+      "model_size_kb": 895.0,
+      "encoding_latency_ms": 0.0484
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 108,
+    "method": "FastICA",
+    "latent_dim": 64,
+    "reconstruction": {
+      "mse": 0.670464,
+      "rmse": 0.818819
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.9561,
+      "knn_overlap": 0.4952
+    },
+    "downstream_knn": {
+      "accuracy": 0.2465,
+      "balanced_accuracy": 0.2351,
+      "macro_f1": 0.2226,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 64,
+      "compression_ratio": 108.0,
+      "latent_bytes_per_window": 256,
+      "param_count": 453376,
+      "model_size_kb": 1771.0,
+      "encoding_latency_ms": 0.0401
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 108,
+    "method": "Autoencoder",
+    "latent_dim": 4,
+    "reconstruction": {
+      "mse": 1.206437,
+      "rmse": 1.098379
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.7904,
+      "knn_overlap": 0.2158
+    },
+    "downstream_knn": {
+      "accuracy": 0.3089,
+      "balanced_accuracy": 0.2789,
+      "macro_f1": 0.2664,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 4,
+      "compression_ratio": 1728.0,
+      "latent_bytes_per_window": 16,
+      "param_count": 3549444,
+      "model_size_kb": 13865.02,
+      "encoding_latency_ms": 0.0393
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 108,
+    "method": "Autoencoder",
+    "latent_dim": 16,
+    "reconstruction": {
+      "mse": 0.976042,
+      "rmse": 0.987948
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.9156,
+      "knn_overlap": 0.3904
+    },
+    "downstream_knn": {
+      "accuracy": 0.4624,
+      "balanced_accuracy": 0.4197,
+      "macro_f1": 0.3776,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 16,
+      "compression_ratio": 432.0,
+      "latent_bytes_per_window": 64,
+      "param_count": 3555600,
+      "model_size_kb": 13889.06,
+      "encoding_latency_ms": 0.0433
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 108,
+    "method": "Autoencoder",
+    "latent_dim": 64,
+    "reconstruction": {
+      "mse": 0.757287,
+      "rmse": 0.870222
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.9565,
+      "knn_overlap": 0.4912
+    },
+    "downstream_knn": {
+      "accuracy": 0.2649,
+      "balanced_accuracy": 0.2493,
+      "macro_f1": 0.2145,
+      "n_classes_test": 12
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 64,
+      "compression_ratio": 108.0,
+      "latent_bytes_per_window": 256,
+      "param_count": 3580224,
+      "model_size_kb": 13985.25,
+      "encoding_latency_ms": 0.041
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 109,
+    "method": "Raw Baseline",
+    "latent_dim": 6912,
+    "reconstruction": {
+      "mse": 0.0,
+      "rmse": 0.0
+    },
+    "neighbourhood": {
+      "trustworthiness": 1.0,
+      "knn_overlap": 1.0
+    },
+    "downstream_knn": {
+      "accuracy": 0.0,
+      "balanced_accuracy": 0.0,
+      "macro_f1": 0.0,
+      "n_classes_test": 1
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 6912,
+      "compression_ratio": 1.0,
+      "latent_bytes_per_window": 27648,
+      "param_count": 0,
+      "model_size_kb": 0.0,
+      "encoding_latency_ms": 0.0
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 109,
+    "method": "PCA",
+    "latent_dim": 2,
+    "reconstruction": {
+      "mse": 2.707026,
+      "rmse": 1.645304
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.615,
+      "knn_overlap": 0.1192
+    },
+    "downstream_knn": {
+      "accuracy": 0.0,
+      "balanced_accuracy": 0.0,
+      "macro_f1": 0.0,
+      "n_classes_test": 1
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 2,
+      "compression_ratio": 3456.0,
+      "latent_bytes_per_window": 8,
+      "param_count": 20736,
+      "model_size_kb": 81.0,
+      "encoding_latency_ms": 0.0643
+    },
+    "explained_variance_ratio": 0.0626901239156723,
+    "cumulative_explained_variance": 0.20455297827720642,
+    "converged": true
+  },
+  {
+    "subject_id": 109,
+    "method": "PCA",
+    "latent_dim": 4,
+    "reconstruction": {
+      "mse": 2.646204,
+      "rmse": 1.626716
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.6641,
+      "knn_overlap": 0.1297
+    },
+    "downstream_knn": {
+      "accuracy": 0.0,
+      "balanced_accuracy": 0.0,
+      "macro_f1": 0.0,
+      "n_classes_test": 1
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 4,
+      "compression_ratio": 1728.0,
+      "latent_bytes_per_window": 16,
+      "param_count": 34560,
+      "model_size_kb": 135.0,
+      "encoding_latency_ms": 0.0374
+    },
+    "explained_variance_ratio": 0.033499520272016525,
+    "cumulative_explained_variance": 0.282779973000288,
+    "converged": true
+  },
+  {
+    "subject_id": 109,
+    "method": "PCA",
+    "latent_dim": 8,
+    "reconstruction": {
+      "mse": 2.526795,
+      "rmse": 1.58959
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.7454,
+      "knn_overlap": 0.2728
+    },
+    "downstream_knn": {
+      "accuracy": 0.0,
+      "balanced_accuracy": 0.0,
+      "macro_f1": 0.0,
+      "n_classes_test": 1
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 8,
+      "compression_ratio": 864.0,
+      "latent_bytes_per_window": 32,
+      "param_count": 62208,
+      "model_size_kb": 243.0,
+      "encoding_latency_ms": 0.0489
+    },
+    "explained_variance_ratio": 0.022010179236531258,
+    "cumulative_explained_variance": 0.3795273117721081,
+    "converged": true
+  },
+  {
+    "subject_id": 109,
+    "method": "PCA",
+    "latent_dim": 16,
+    "reconstruction": {
+      "mse": 2.436777,
+      "rmse": 1.561018
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.7492,
+      "knn_overlap": 0.3059
+    },
+    "downstream_knn": {
+      "accuracy": 0.0204,
+      "balanced_accuracy": 0.0204,
+      "macro_f1": 0.008,
+      "n_classes_test": 1
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 16,
+      "compression_ratio": 432.0,
+      "latent_bytes_per_window": 64,
+      "param_count": 117504,
+      "model_size_kb": 459.0,
+      "encoding_latency_ms": 0.0424
+    },
+    "explained_variance_ratio": 0.010082648135721684,
+    "cumulative_explained_variance": 0.4947454733774066,
+    "converged": true
+  },
+  {
+    "subject_id": 109,
+    "method": "PCA",
+    "latent_dim": 32,
+    "reconstruction": {
+      "mse": 2.121966,
+      "rmse": 1.456697
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.9423,
+      "knn_overlap": 0.4598
+    },
+    "downstream_knn": {
+      "accuracy": 0.7347,
+      "balanced_accuracy": 0.7347,
+      "macro_f1": 0.2118,
+      "n_classes_test": 1
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 32,
+      "compression_ratio": 216.0,
+      "latent_bytes_per_window": 128,
+      "param_count": 228096,
+      "model_size_kb": 891.0,
+      "encoding_latency_ms": 0.0424
+    },
+    "explained_variance_ratio": 0.004413467366248369,
+    "cumulative_explained_variance": 0.5960696511901915,
+    "converged": true
+  },
+  {
+    "subject_id": 109,
+    "method": "PCA",
+    "latent_dim": 64,
+    "reconstruction": {
+      "mse": 1.69727,
+      "rmse": 1.302793
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.9533,
+      "knn_overlap": 0.5297
+    },
+    "downstream_knn": {
+      "accuracy": 0.6122,
+      "balanced_accuracy": 0.6122,
+      "macro_f1": 0.1266,
+      "n_classes_test": 1
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 64,
+      "compression_ratio": 108.0,
+      "latent_bytes_per_window": 256,
+      "param_count": 449280,
+      "model_size_kb": 1755.0,
+      "encoding_latency_ms": 0.1154
+    },
+    "explained_variance_ratio": 0.001999680185690522,
+    "cumulative_explained_variance": 0.6930080836173147,
+    "converged": true
+  },
+  {
+    "subject_id": 109,
+    "method": "PCA",
+    "latent_dim": 128,
+    "reconstruction": {
+      "mse": 1.369011,
+      "rmse": 1.170047
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.9647,
+      "knn_overlap": 0.5532
+    },
+    "downstream_knn": {
+      "accuracy": 0.4694,
+      "balanced_accuracy": 0.4694,
+      "macro_f1": 0.1597,
+      "n_classes_test": 1
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 128,
+      "compression_ratio": 54.0,
+      "latent_bytes_per_window": 512,
+      "param_count": 891648,
+      "model_size_kb": 3483.0,
+      "encoding_latency_ms": 0.0648
+    },
+    "explained_variance_ratio": 0.0009400876588188112,
+    "cumulative_explained_variance": 0.7794598590116948,
+    "converged": true
+  },
+  {
+    "subject_id": 109,
+    "method": "FastICA",
+    "latent_dim": 2,
+    "reconstruction": {
+      "mse": 2.707026,
+      "rmse": 1.645304
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.6099,
+      "knn_overlap": 0.1167
+    },
+    "downstream_knn": {
+      "accuracy": 0.0,
+      "balanced_accuracy": 0.0,
+      "macro_f1": 0.0,
+      "n_classes_test": 1
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 2,
+      "compression_ratio": 3456.0,
+      "latent_bytes_per_window": 8,
+      "param_count": 20740,
+      "model_size_kb": 81.02,
+      "encoding_latency_ms": 0.0493
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 109,
+    "method": "FastICA",
+    "latent_dim": 4,
+    "reconstruction": {
+      "mse": 2.646201,
+      "rmse": 1.626715
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.6598,
+      "knn_overlap": 0.1226
+    },
+    "downstream_knn": {
+      "accuracy": 0.0,
+      "balanced_accuracy": 0.0,
+      "macro_f1": 0.0,
+      "n_classes_test": 1
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 4,
+      "compression_ratio": 1728.0,
+      "latent_bytes_per_window": 16,
+      "param_count": 34576,
+      "model_size_kb": 135.06,
+      "encoding_latency_ms": 0.0468
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 109,
+    "method": "FastICA",
+    "latent_dim": 8,
+    "reconstruction": {
+      "mse": 2.526795,
+      "rmse": 1.58959
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.7438,
+      "knn_overlap": 0.2784
+    },
+    "downstream_knn": {
+      "accuracy": 0.0,
+      "balanced_accuracy": 0.0,
+      "macro_f1": 0.0,
+      "n_classes_test": 1
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 8,
+      "compression_ratio": 864.0,
+      "latent_bytes_per_window": 32,
+      "param_count": 62272,
+      "model_size_kb": 243.25,
+      "encoding_latency_ms": 0.0467
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 109,
+    "method": "FastICA",
+    "latent_dim": 16,
+    "reconstruction": {
+      "mse": 2.436735,
+      "rmse": 1.561005
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.6862,
+      "knn_overlap": 0.2772
+    },
+    "downstream_knn": {
+      "accuracy": 0.551,
+      "balanced_accuracy": 0.551,
+      "macro_f1": 0.0888,
+      "n_classes_test": 1
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 16,
+      "compression_ratio": 432.0,
+      "latent_bytes_per_window": 64,
+      "param_count": 117760,
+      "model_size_kb": 460.0,
+      "encoding_latency_ms": 0.0678
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 109,
+    "method": "FastICA",
+    "latent_dim": 32,
+    "reconstruction": {
+      "mse": 2.117357,
+      "rmse": 1.455114
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.9299,
+      "knn_overlap": 0.4334
+    },
+    "downstream_knn": {
+      "accuracy": 0.7959,
+      "balanced_accuracy": 0.7959,
+      "macro_f1": 0.1266,
+      "n_classes_test": 1
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 32,
+      "compression_ratio": 216.0,
+      "latent_bytes_per_window": 128,
+      "param_count": 229120,
+      "model_size_kb": 895.0,
+      "encoding_latency_ms": 0.2011
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 109,
+    "method": "FastICA",
+    "latent_dim": 64,
+    "reconstruction": {
+      "mse": 1.698551,
+      "rmse": 1.303285
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.9528,
+      "knn_overlap": 0.5296
+    },
+    "downstream_knn": {
+      "accuracy": 0.6327,
+      "balanced_accuracy": 0.6327,
+      "macro_f1": 0.1107,
+      "n_classes_test": 1
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 64,
+      "compression_ratio": 108.0,
+      "latent_bytes_per_window": 256,
+      "param_count": 453376,
+      "model_size_kb": 1771.0,
+      "encoding_latency_ms": 0.0719
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 109,
+    "method": "Autoencoder",
+    "latent_dim": 4,
+    "reconstruction": {
+      "mse": 2.684401,
+      "rmse": 1.638414
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.6265,
+      "knn_overlap": 0.1794
+    },
+    "downstream_knn": {
+      "accuracy": 0.0,
+      "balanced_accuracy": 0.0,
+      "macro_f1": 0.0,
+      "n_classes_test": 1
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 4,
+      "compression_ratio": 1728.0,
+      "latent_bytes_per_window": 16,
+      "param_count": 3549444,
+      "model_size_kb": 13865.02,
+      "encoding_latency_ms": 0.0531
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 109,
+    "method": "Autoencoder",
+    "latent_dim": 16,
+    "reconstruction": {
+      "mse": 2.233506,
+      "rmse": 1.494492
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.9139,
+      "knn_overlap": 0.3903
+    },
+    "downstream_knn": {
+      "accuracy": 0.5714,
+      "balanced_accuracy": 0.5714,
+      "macro_f1": 0.0909,
+      "n_classes_test": 1
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 16,
+      "compression_ratio": 432.0,
+      "latent_bytes_per_window": 64,
+      "param_count": 3555600,
+      "model_size_kb": 13889.06,
+      "encoding_latency_ms": 0.0813
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  },
+  {
+    "subject_id": 109,
+    "method": "Autoencoder",
+    "latent_dim": 64,
+    "reconstruction": {
+      "mse": 1.714057,
+      "rmse": 1.30922
+    },
+    "neighbourhood": {
+      "trustworthiness": 0.9524,
+      "knn_overlap": 0.5267
+    },
+    "downstream_knn": {
+      "accuracy": 0.6327,
+      "balanced_accuracy": 0.6327,
+      "macro_f1": 0.0861,
+      "n_classes_test": 1
+    },
+    "resources": {
+      "orig_dim": 6912,
+      "latent_dim": 64,
+      "compression_ratio": 108.0,
+      "latent_bytes_per_window": 256,
+      "param_count": 3580224,
+      "model_size_kb": 13985.25,
+      "encoding_latency_ms": 0.0572
+    },
+    "explained_variance_ratio": null,
+    "cumulative_explained_variance": null,
+    "converged": true
+  }
+]

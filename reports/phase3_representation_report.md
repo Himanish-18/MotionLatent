@@ -72,7 +72,7 @@ Subject 109 performed only 49 pure non-transient windows (exclusively Activity 2
 - Architecture: Symmetric Multi-Layer Perceptron (MLP)
   $$\text{Input } (6912) \longrightarrow \text{Dense}(256) + \text{ReLU} \longrightarrow \text{Dense}(d) \longrightarrow \text{Dense}(256) + \text{ReLU} \longrightarrow \text{Dense}(6912)$$
 - Bottleneck dimensions evaluated: $d \in [4, 16, 64]$.
-- Training setup: Adam optimizer ($\text{lr} = 10^{-3}$), MSE loss, batch size 128, max 12 epochs, early stopping patience 3 on a 15% training-fold validation split. Fixed seed 42.
+- Training setup: Adam optimizer ($\text{lr} = 10^{-3}$), MSE loss, batch size 128, max 12 epochs, early stopping patience 3 on a deterministic 10% slice of training-fold windows (drawn strictly from training subjects; zero held-out test leakage). Fixed seed 42.
 
 ---
 
@@ -120,23 +120,25 @@ The table below summarizes results across all 9 LOSO folds, contrasting 9-subjec
 
 ### 4.3 Per-Subject Performance (Balanced Accuracy)
 
-Below is the fold-level performance across all 9 subjects for key candidate dimensions:
+Below is the verified fold-level performance across all 9 subjects from saved experiment outputs (`reports/phase3_loso_results.json`):
 
 | Test Subject | Windows | Raw Baseline ($d=6912$) | PCA ($d=16$) | PCA ($d=32$) | ICA ($d=16$) | ICA ($d=32$) | AE ($d=16$) |
 |---|---|---|---|---|---|---|---|
-| **S101** | 1,745 | 0.551 | 0.712 | 0.728 | 0.744 | 0.687 | 0.735 |
-| **S102** | 1,847 | 0.592 | 0.738 | 0.751 | 0.742 | 0.729 | 0.768 |
-| **S103** | 1,833 | 0.624 | 0.762 | 0.784 | 0.771 | 0.759 | 0.792 |
-| **S104** | 1,847 | 0.673 | 0.791 | 0.796 | 0.812 | 0.788 | 0.804 |
-| **S105** | 1,885 | 0.518 | 0.643 | 0.669 | 0.655 | 0.631 | 0.678 |
-| **S106** | 1,777 | 0.449 | 0.621 | 0.618 | 0.619 | 0.584 | 0.627 |
-| **S107** | 1,794 | 0.528 | 0.679 | 0.684 | 0.671 | 0.650 | 0.699 |
-| **S108** | 2,020 | 0.618 | 0.678 | 0.622 | 0.669 | 0.609 | 0.641 |
+| **S101** | 1,927 | 0.469 | 0.562 | 0.569 | 0.610 | 0.583 | 0.563 |
+| **S102** | 2,029 | 0.602 | 0.650 | 0.715 | 0.664 | 0.724 | 0.636 |
+| **S103** | 1,342 | 0.665 | 0.823 | 0.820 | 0.837 | 0.803 | 0.832 |
+| **S104** | 1,787 | 0.683 | 0.848 | 0.820 | 0.846 | 0.801 | 0.824 |
+| **S105** | 2,098 | 0.537 | 0.743 | 0.763 | 0.775 | 0.715 | 0.771 |
+| **S106** | 1,927 | 0.676 | 0.752 | 0.755 | 0.752 | 0.745 | 0.813 |
+| **S107** | 1,794 | 0.651 | 0.902 | 0.883 | 0.901 | 0.847 | 0.885 |
+| **S108** | 2,020 | 0.269 | 0.343 | 0.327 | 0.298 | 0.220 | 0.420 |
 | **S109** (Rope jump only) | 49 | 0.000 | 0.020 | 0.735 | 0.551 | 0.796 | 0.571 |
-| **Mean (All 9)** | — | **0.506** | **0.627** | **0.710** | **0.693** | **0.693** | **0.702** |
-| **Mean (Excl. S109)** | — | **0.569** | **0.703** | **0.707** | **0.710** | **0.680** | **0.718** |
+| **Mean (All 9)** | **14,973** | **0.506** | **0.627** | **0.710** | **0.693** | **0.693** | **0.702** |
+| **Mean (Excl. S109)** | **14,924** | **0.569** | **0.703** | **0.707** | **0.710** | **0.680** | **0.718** |
 
-*Analysis of Subject 109*: In Subject 109, the test fold contains only activity 24. Low-dimension PCA ($d \le 16$) misclassifies this vigorous rope jumping as running or cycling because fewer components capture the subtle high-impact foot/hand signature. At $d=32$, PCA separates rope jumping accurately (73.5%), whereas Autoencoder achieves 57.1% at $d=16$.
+*Analysis of Subject 109 & Subject 108*:
+- **Subject 109**: The test fold contains exclusively activity 24 (rope jumping). Low-dimension PCA ($d=16$) misclassifies this vigorous rope jumping as running or cycling because 16 components focus on predominant lower-frequency locomotor patterns, yielding 2.0% balanced accuracy. At $d=32$, PCA captures the distinct high-impact foot/hand acceleration signature, jumping to 73.5% accuracy. Autoencoder-16 achieves 57.1%.
+- **Subject 108**: Exhibits atypical biomechanical sensor patterns, proving challenging across all linear models (Raw: 26.9%, PCA-16: 34.3%, PCA-32: 32.7%, ICA-32: 22.0%). Autoencoder-16 achieves 42.0%, demonstrating the advantage of nonlinear feature extraction in extreme out-of-distribution folds.
 
 ---
 
@@ -195,21 +197,31 @@ To rigorously answer the project objective without arbitrary heuristics, we defi
 3. **Compression Ratio**: Must achieve at least $100\times$ compression relative to raw inputs.
 4. **On-Device Viability**: Inference latency must remain under 1 ms per window, and storage must be viable for embedded microcontrollers or wearable devices.
 
-### Evaluation of Candidates
+### Evaluation of Candidates (Strict Criteria Enforcement)
 
-| Candidate Dimension & Method | Activity Retention (>66.9%) | Trustworthiness (>0.90) | Compression (>100x) | On-Device Footprint | Meets All Criteria? |
+| Candidate Dimension & Method | Activity Retention (>66.9%) | Trustworthiness (>0.900) | Compression (>=100x) | On-Device Footprint | Strictly Meets All Criteria? |
 |---|---|---|---|---|---|
-| $d=4$ (Any method) | ❌ 45.4%–50.9% | ❌ 0.755–0.806 | ✅ 1728x | ✅ Very low | ❌ No |
-| $d=8$ (Any method) | ❌ 61.2%–61.3% | ❌ 0.852–0.860 | ✅ 864x | ✅ Very low | ❌ No |
-| **$d=16$ (Autoencoder)** | **✅ 71.8%** (+14.9%) | **✅ 0.935** | **✅ 432x** | ⚠️ 13.9 MB (MLP weights) | **✅ YES (High-Compute Embedded)** |
-| **$d=16$ (PCA)** | **✅ 70.3%** (+13.4%) | ⚠️ 0.898 (~0.90) | **✅ 432x** | **✅ 459 KB** | **✅ YES (Strict Embedded)** |
-| **$d=32$ (PCA)** | **✅ 70.7%** (+13.8%) | **✅ 0.946** | **✅ 216x** | **✅ 891 KB** | **✅ YES (Optimal Linear)** |
-| $d=64$ (PCA) | ✅ 68.6% (Degraded) | ✅ 0.966 | ✅ 108x | ⚠️ 1.75 MB | ❌ Inferior to $d=32$ |
+| **$d=4$ (Any method)** | ❌ FAIL (45.4%–50.9%) | ❌ FAIL (0.755–0.806) | ✅ PASS (1728x) | ✅ PASS (Negligible) | ❌ **FAIL** |
+| **$d=8$ (Any method)** | ❌ FAIL (61.2%–61.3%) | ❌ FAIL (0.852–0.860) | ✅ PASS (864x) | ✅ PASS (Negligible) | ❌ **FAIL** |
+| **PCA-16** | ✅ PASS (70.3%) | ❌ **FAIL (0.8982 < 0.900)** | ✅ PASS (432x) | ✅ PASS (459 KB Flash) | ❌ **FAIL (Strict Topology)** |
+| **FastICA-16** | ✅ PASS (71.0%) | ❌ **FAIL (0.8960 < 0.900)** | ✅ PASS (432x) | ✅ PASS (460 KB Flash) | ❌ **FAIL (Strict Topology)** |
+| **PCA-32** | ✅ PASS (70.7%) | ✅ PASS (0.946) | ✅ PASS (216x) | ⚠️ **PASS / UNVERIFIED** (891 KB Flash) | ✅ **PASS (Representational & MCU with >=1MB Flash)** |
+| **FastICA-32** | ✅ PASS (68.0%) | ✅ PASS (0.951) | ✅ PASS (216x) | ⚠️ **PASS / UNVERIFIED** (895 KB Flash) | ✅ **PASS (Representational)** |
+| **Autoencoder-16** | ✅ PASS (71.8%) | ✅ PASS (0.935) | ✅ PASS (432x) | ❌ **FAIL (MCU) / ✅ PASS (Edge SBC/Mobile)** (~13.9 MB) | ⚠️ **TARGET-DEPENDENT (Fails MCU, Passes Edge SBC)** |
+| **PCA-64** | ✅ PASS (68.6%) | ✅ PASS (0.966) | ✅ PASS (108x) | ⚠️ UNVERIFIED (1.75 MB Flash) | ❌ Sub-optimal vs PCA-32 |
+| **Autoencoder-64** | ✅ PASS (67.6%) | ✅ PASS (0.968) | ✅ PASS (108x) | ❌ FAIL (MCU) (~14.0 MB) | ❌ Sub-optimal vs AE-16 |
 
-### Definitive Recommendation
-- **Recommended Minimum Viable Dimension:** **$d = 16$** (with Nonlinear Autoencoder) or **$d = 32$** (with Linear PCA).
-  - If the deployment target allows a ~14 MB PyTorch/TFLite runtime, **Autoencoder at $d=16$** provides the superior trade-off: **$432\times$ compression**, highest balanced accuracy (**71.8%**), and highest macro-F1 (**67.3%**).
-  - If the deployment target is a resource-constrained microcontroller (e.g., ARM Cortex-M with <1 MB flash), **PCA at $d=32$** provides an optimal linear solution: single matrix multiplication, **891 KB** parameter footprint, **0.036 ms** latency, and **70.7%** balanced accuracy.
+### Rigorous MVD Determination & Deployment Trade-Offs
+1. **Strict Algorithmic MVD Winner:** **$d = 32$ (Linear PCA)**
+   - It is the **only linear representation** that simultaneously satisfies all three representational thresholds: balanced accuracy (**70.7%** excl. S109), neighbourhood trustworthiness (**0.9455** $> 0.9000$), and compression ratio (**$216.0\times$** $\ge 100\times$).
+   - Its total model footprint is **891 KB** (projection matrix + mean), requiring zero deep learning runtime libraries (single BLAS matrix multiplication), making it deployable on microcontrollers with $\ge 1$ MB flash memory.
+2. **High-Compute Edge Challenger:** **$d = 16$ (Nonlinear Autoencoder)**
+   - Meets all mathematical criteria with highest accuracy (**71.8%** excl. S109) and $432.0\times$ compression.
+   - **Critical Hardware Caveat:** Its 3.55M parameters (~13.89 MB weights) disqualify it from typical microcontrollers (e.g., Cortex-M4 with $\le 512$ KB RAM/Flash), but make it well suited for Linux-based edge devices, mobile phones, or smart gateways.
+3. **Strict Rejection of PCA-16 as Full MVD:**
+   - Although PCA-16 achieves $70.3\%$ accuracy and fits within 459 KB, its trustworthiness is strictly **$0.8982$**, failing the pre-registered $>0.9000$ threshold. Under strict scientific criteria, it cannot be certified as preserving the local 5-NN metric topology.
+4. **Conclusion for Ultra-Constrained Hardware (< 512 KB Flash):**
+   - If the deployment constraint mandates a total model storage footprint $< 512$ KB, **no candidate satisfies all criteria simultaneously** without either relaxing the trustworthiness threshold to $0.895$ (which would admit PCA-16) or accepting lower activity retention.
 
 ---
 

@@ -19,6 +19,7 @@ MotionLatent/
 │   ├── phase2_preprocessing_report.md   # Phase 2 preprocessing report
 │   ├── phase2_1_validation_report.md    # Phase 2.1 validation report
 │   ├── phase3_representation_report.md  # Phase 3 representation learning report
+│   ├── phase3_1_validation_report.md    # Phase 3.1 validation & reconciliation report
 │   ├── phase3_loso_results.json         # Fold-level LOSO metric records
 │   ├── phase3_summary.json              # Aggregated LOSO metrics
 │   └── figures/                         # Generated plots
@@ -42,7 +43,8 @@ MotionLatent/
 ├── tests/
 │   ├── test_audit.py                    # Phase 1 tests (18 tests)
 │   ├── test_preprocessing.py            # Phase 2/2.1 tests (40 tests)
-│   └── test_phase3.py                   # Phase 3 tests (15 tests)
+│   ├── test_phase3.py                   # Phase 3 tests (15 tests)
+│   └── test_phase3_1_validation.py      # Phase 3.1 validation tests (9 tests)
 ├── run_audit.py                         # Phase 1 audit runner
 ├── run_preprocessing.py                 # Phase 2 windowing runner
 ├── run_phase3.py                        # Phase 3 LOSO experiment runner
@@ -93,6 +95,7 @@ python -m pytest tests/ -v
 | 2 | Preprocessing pipeline implementation | Complete |
 | 2.1 | Validation pass & contract verification | Complete |
 | 3 | Unsupervised latent representation experiments (PCA, ICA, Autoencoder) | Complete |
+| 3.1 | Experimental validation & metric reconciliation | Complete |
 | 4 | Downstream classification & deployment optimization | Next |
 
 ## License

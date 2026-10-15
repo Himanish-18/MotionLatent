@@ -25,9 +25,9 @@ We benchmarked four representation paradigms across candidate latent dimensions 
 1. **Super-Baseline Compression Peak**: Across all representations, downstream activity recognition (evaluated with a fixed $k$-NN classifier, $k=5$) substantially outperforms the raw 6,912-dimensional baseline. While the raw baseline achieves an 8-subject balanced accuracy of **56.9%** (9-subject: 50.6%), **PCA at $d=32$ achieves 70.7%** (9-subject: 71.0%), and the **Autoencoder at $d=16$ achieves 71.8%** (9-subject: 70.2%).
 2. **The Curse of Raw Dimensionality**: High-dimensional raw motion vectors ($\mathbb{R}^{6912}$) suffer from sensor-specific drift and high-frequency noise that disperses activity clusters in Euclidean space. Compact latent projections act as noise filters, retaining coherent biomechanical dynamics. As dimensions increase beyond $d=32$ ($64 \rightarrow 128 \rightarrow 6912$), downstream classification accuracy monotonically degrades.
 3. **Reconstruction vs. Semantic Separation**: Reconstruction error (MSE) decreases monotonically with dimension ($1.13 \rightarrow 0.44$ for PCA), while downstream activity classification peaks at intermediate dimensions ($d=16$ to $d=32$). This empirically proves that reconstruction fidelity and activity separability measure fundamentally distinct manifold characteristics.
-4. **Recommended Minimum Viable Dimension (MVD)**:
-   - **Primary Recommendation ($d=16$, Autoencoder)**: Compresses raw vectors by **$432.0\times$** (16 dimensions vs. 6,912), achieves **71.8%** balanced accuracy (excl. S109) and **67.3%** macro-F1, **93.5%** trustworthiness, with an inference latency of **0.047 ms/window** on standard CPU.
-   - **Linear Constrained Alternative ($d=32$, PCA)**: Compresses raw vectors by **$216.0\times$**, achieves **70.7%** balanced accuracy (excl. S109) and **65.1%** macro-F1, **94.6%** trustworthiness, explains **59.4%** of total variance, with a lightweight model size of **891 KB** and **0.036 ms/window** encoding latency.
+4. **Minimum Viable Dimension (MVD) Determination**:
+   - **Strict Algorithmic MVD ($d=32$, Linear PCA)**: Compresses raw vectors by **$216.0\times$**, achieves **70.7%** balanced accuracy (8-sub macro-mean, excl. S109; 9-sub macro-mean: 71.0%, weighted fold-score mean: 69.8%, true pooled: 69.4%), **65.1%** macro-F1, **94.6%** neighbourhood trustworthiness, explains **59.4%** of total variance, with a total model size of **891 KB** and **0.036 ms/window** latency. Strictly satisfies all mathematical and representational criteria, viable on microcontrollers with $\ge 1$ MB Flash.
+   - **High-Compute Edge Challenger ($d=16$, Nonlinear Autoencoder)**: Compresses raw vectors by **$432.0\times$**, achieves **71.8%** balanced accuracy (8-sub macro-mean; 9-sub: 70.2%, weighted fold-score mean: 70.9%), **67.3%** macro-F1, **93.5%** trustworthiness, with an inference latency of **0.047 ms/window**. *Hardware Caveat:* Requires ~13.89 MB weight storage (3.55M parameters), disqualifying it from ultra-constrained microcontrollers ($\le 512$ KB / 1 MB), but highly viable for Edge SBCs (Raspberry Pi, Coral) or mobile runtimes.
 
 ---
 
@@ -101,6 +101,11 @@ The table below summarizes results across all 9 LOSO folds, contrasting 9-subjec
 | **Autoencoder** | 4 | $1728.0\times$ | $0.453 \pm 0.190$ | $0.394 \pm 0.161$ | 0.509 | 0.443 | 1.0363 | 0.8061 | 13,865 KB | 0.041 |
 | **Autoencoder** | **16** | **$432.0\times$** | $\mathbf{0.702 \pm 0.150}$ | $\mathbf{0.608 \pm 0.235}$ | $\mathbf{0.718}$ | $\mathbf{0.673}$ | 0.7660 | 0.9354 | 13,889 KB | 0.047 |
 | **Autoencoder** | 64 | $108.0\times$ | $0.671 \pm 0.163$ | $0.561 \pm 0.230$ | 0.676 | 0.621 | 0.5910 | 0.9685 | 13,985 KB | 0.044 |
+
+*Methodological Note on Metric Aggregation*:
+- Table 4.1 reports the standard LOSO **unweighted macro-mean across folds** $\pm$ fold standard deviation.
+- For window-count-weighted fold-score averages ($\sum N_k S_k / \sum N_k$): PCA-32 achieves **0.698** (9-sub) and **0.698** (8-sub); Autoencoder-16 achieves **0.709** (9-sub) and **0.709** (8-sub).
+- For true pooled evaluation (concatenating all 14,973 held-out predictions and evaluating once over the global population): PCA-32 achieves **0.694** balanced accuracy, **0.727** accuracy, and **0.698** macro-F1.
 
 ---
 

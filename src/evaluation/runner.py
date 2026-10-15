@@ -23,11 +23,24 @@ from src.evaluation.metrics import (
     compute_neighbourhood_preservation,
     evaluate_downstream_knn,
     compute_resource_metrics,
+    compute_weighted_fold_score,
 )
 
 PCA_DIMS = [2, 4, 8, 16, 32, 64, 128]
 ICA_DIMS = [2, 4, 8, 16, 32, 64]
 AE_DIMS = [4, 16, 64]
+
+SUBJECT_WINDOW_COUNTS = {
+    101: 1927,
+    102: 2029,
+    103: 1342,
+    104: 1787,
+    105: 2098,
+    106: 1927,
+    107: 1794,
+    108: 2020,
+    109: 49,
+}
 
 
 def run_single_fold_experiments(
@@ -247,6 +260,10 @@ def aggregate_loso_results(all_results: List[Dict[str, Any]]) -> Dict[str, Any]:
         bal_accs_ex = [r["downstream_knn"]["balanced_accuracy"] for r in records_ex109]
         f1s_ex = [r["downstream_knn"]["macro_f1"] for r in records_ex109]
 
+        # Subject window counts for weighted fold-score averaging
+        counts_all = [SUBJECT_WINDOW_COUNTS.get(r["subject_id"], 1) for r in records]
+        counts_ex = [SUBJECT_WINDOW_COUNTS.get(r["subject_id"], 1) for r in records_ex109]
+
         cum_var = records[0]["cumulative_explained_variance"]
         res = records[0]["resources"]
 
@@ -254,17 +271,22 @@ def aggregate_loso_results(all_results: List[Dict[str, Any]]) -> Dict[str, Any]:
             "method": method,
             "latent_dim": d,
             "compression_ratio": res["compression_ratio"],
-            # 9-subject metrics
+            # 9-subject LOSO macro-means
             "accuracy_mean": round(float(np.mean(accs_all)), 4),
             "accuracy_std": round(float(np.std(accs_all)), 4),
             "balanced_accuracy_mean": round(float(np.mean(bal_accs_all)), 4),
             "balanced_accuracy_std": round(float(np.std(bal_accs_all)), 4),
             "macro_f1_mean": round(float(np.mean(f1s_all)), 4),
             "macro_f1_std": round(float(np.std(f1s_all)), 4),
+            # 9-subject weighted fold-score means: sum(N_k * S_k) / sum(N_k)
+            "balanced_accuracy_weighted_mean": compute_weighted_fold_score(bal_accs_all, counts_all),
+            "accuracy_weighted_mean": compute_weighted_fold_score(accs_all, counts_all),
+            "macro_f1_weighted_mean": compute_weighted_fold_score(f1s_all, counts_all),
             # 8-subject metrics (excl. S109)
             "accuracy_ex109_mean": round(float(np.mean(accs_ex)), 4),
             "balanced_accuracy_ex109_mean": round(float(np.mean(bal_accs_ex)), 4),
             "macro_f1_ex109_mean": round(float(np.mean(f1s_ex)), 4),
+            "balanced_accuracy_weighted_ex109_mean": compute_weighted_fold_score(bal_accs_ex, counts_ex),
             # Reconstruction & Neighbourhood
             "mse_mean": round(float(np.mean(mses_all)), 6),
             "mse_std": round(float(np.std(mses_all)), 6),

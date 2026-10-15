@@ -60,20 +60,20 @@ We audited the entire data processing chain from raw PAMAP2 observations to eval
 
 ### Stage-by-Stage & Per-Subject Reconciliation Table
 
-| Subject ID | Total Accepted Windows | Transient Windows (Act 0) | Mixed Windows (< 80%) | Evaluated Pure Non-Transient Windows | Table 4.3 Draft Count | Discrepancy |
+| Subject ID | Total Accepted Windows | Transient Windows (Act 0, $\ge 80\%$) | Mixed Windows ($< 80\%$) | Evaluated Pure Non-Transient Windows | Table 4.3 Draft Count | Discrepancy |
 |---|---|---|---|---|---|---|
-| **S101** | 2,916 | 967 | 22 | **1,927** | 1,745 | -182 (Draft error) |
+| **S101** | 2,916 | 960 | 29 | **1,927** | 1,745 | -182 (Draft error) |
 | **S102** | 3,451 | 1,391 | 31 | **2,029** | 1,847 | -182 (Draft error) |
-| **S103** | 1,963 | 610 | 11 | **1,342** | 1,833 | +491 (Draft error) |
-| **S104** | 2,559 | 741 | 31 | **1,787** | 1,847 | +60 (Draft error) |
-| **S105** | 2,906 | 778 | 30 | **2,098** | 1,885 | -213 (Draft error) |
-| **S106** | 2,809 | 856 | 26 | **1,927** | 1,777 | -150 (Draft error) |
-| **S107** | 2,434 | 609 | 31 | **1,794** | 1,794 | 0 (Correct) |
-| **S108** | 3,148 | 1,093 | 35 | **2,020** | 2,020 | 0 (Correct) |
+| **S103** | 1,963 | 600 | 21 | **1,342** | 1,833 | +491 (Draft error) |
+| **S104** | 2,559 | 746 | 26 | **1,787** | 1,847 | +60 (Draft error) |
+| **S105** | 2,906 | 781 | 27 | **2,098** | 1,885 | -213 (Draft error) |
+| **S106** | 2,809 | 857 | 25 | **1,927** | 1,777 | -150 (Draft error) |
+| **S107** | 2,434 | 613 | 27 | **1,794** | 1,794 | 0 (Correct) |
+| **S108** | 3,148 | 1,097 | 31 | **2,020** | 2,020 | 0 (Correct) |
 | **S109** | 63 | 12 | 2 | **49** | 49 | 0 (Correct) |
 | **Total** | **22,249** | **7,057** | **219** | **14,973** | **14,797** | **-176** |
 
-**Conclusion**: The evaluation pipeline evaluated **14,973 windows**. Zero windows were lost in code. The discrepancy was an artifact of manual transcription during report drafting for subjects S101–S106.
+**Conclusion**: The evaluation pipeline evaluated **14,973 windows**. Zero windows were lost in code. The discrepancy in evaluated windows was an artifact of manual transcription during report drafting for subjects S101–S106. In addition, per-subject transient vs mixed breakdowns have been reconciled to the authoritative metadata in `data/processed/window_metadata.json` (exactly matching Phase 2.1 Table 4.2).
 
 ---
 
@@ -82,22 +82,27 @@ We audited the entire data processing chain from raw PAMAP2 observations to eval
 We recomputed all metrics from the individual predictions and fold-level records in `reports/phase3_loso_results.json`.
 
 ### 4.1 Comparison of Aggregation Methodologies
-In scientific LOSO reporting, two distinct aggregation methods exist:
+In scientific LOSO reporting, three distinct aggregation methods must be distinguished:
 1. **Unweighted Macro-Mean across Folds (Standard LOSO convention)**:
    $$\text{Macro-Mean} = \frac{1}{K} \sum_{k=1}^K M_k, \quad \text{Std} = \sqrt{\frac{1}{K}\sum_{k=1}^K (M_k - \text{Macro-Mean})^2}$$
-2. **Window-Weighted (Pooled) Score**:
-   $$\text{Pooled} = \frac{\sum_{k=1}^K N_k M_k}{\sum_{k=1}^K N_k}$$
+2. **Window-Weighted Fold-Score Mean (Sample-Weighted Fold Average)**:
+   $$\text{Weighted Fold-Score Mean} = \frac{\sum_{k=1}^K N_k M_k}{\sum_{k=1}^K N_k}$$
+   *(Note: Phase 3.1 initially labeled this as "Pooled Score"; it is strictly a weighted average of fold scores, not pooled over instances).*
+3. **True Pooled Metric (Evaluated Over Concatenated Predictions)**:
+   Concatenate all held-out predictions $\hat{\mathbf{y}} = \bigoplus_{k=1}^K \hat{y}^{(k)}$ and ground-truth labels $\mathbf{y} = \bigoplus_{k=1}^K y^{(k)}$, then evaluate balanced accuracy / macro-F1 once over the combined 14,973 windows.
 
-The table below contrasts both aggregation methods for candidate models:
+The table below contrasts fold aggregation methods for candidate models:
 
-| Representation | Latent Dim ($d$) | 9-Subject Macro-Mean | 9-Subject Pooled (Weighted) | 8-Subject Macro-Mean (excl. S109) | 8-Subject Pooled (excl. S109) |
-|---|---|---|---|---|---|
-| **Raw Baseline** | 6912 | $0.506 \pm 0.219$ | 0.560 | 0.569 | 0.561 |
-| **PCA** | 16 | $0.627 \pm 0.268$ | 0.691 | 0.703 | 0.693 |
-| **PCA** | **32** | $\mathbf{0.710 \pm 0.159}$ | $\mathbf{0.698}$ | $\mathbf{0.707}$ | $\mathbf{0.698}$ |
-| **FastICA** | 16 | $0.693 \pm 0.177$ | 0.700 | 0.710 | 0.700 |
-| **FastICA** | 32 | $0.693 \pm 0.182$ | 0.670 | 0.680 | 0.670 |
-| **Autoencoder** | **16** | $\mathbf{0.702 \pm 0.150}$ | $\mathbf{0.709}$ | $\mathbf{0.718}$ | $\mathbf{0.709}$ |
+| Representation | Latent Dim ($d$) | 9-Subject Macro-Mean | 9-Subject Weighted Fold-Score Mean | 8-Subject Macro-Mean (excl. S109) | 8-Subject Weighted Fold-Score Mean (excl. S109) | True Pooled Balanced Accuracy |
+|---|---|---|---|---|---|---|
+| **Raw Baseline** | 6912 | $0.506 \pm 0.219$ | 0.560 | 0.569 | 0.561 | — |
+| **PCA** | 16 | $0.627 \pm 0.268$ | 0.691 | 0.703 | 0.693 | — |
+| **PCA** | **32** | $\mathbf{0.710 \pm 0.159}$ | $\mathbf{0.698}$ | $\mathbf{0.707}$ | $\mathbf{0.698}$ | $\mathbf{0.694}$ |
+| **FastICA** | 16 | $0.693 \pm 0.177$ | 0.700 | 0.710 | 0.700 | — |
+| **FastICA** | 32 | $0.693 \pm 0.182$ | 0.670 | 0.680 | 0.670 | — |
+| **Autoencoder** | **16** | $\mathbf{0.702 \pm 0.150}$ | $\mathbf{0.709}$ | $\mathbf{0.718}$ | $\mathbf{0.709}$ | — |
+
+*Note on True Pooled Metric*: For PCA-32, concatenating all held-out predictions yields True Pooled Balanced Accuracy of **0.6936** ($\approx 0.694$), True Pooled Accuracy of **0.7270**, and True Pooled Macro-F1 of **0.6980**. For Autoencoder and FastICA, fold-level predictions were not serialized to disk during Phase 3 execution, so only their Macro-Mean and Weighted Fold-Score Mean are directly reproducible from saved fold records.
 
 ### 4.2 Reconciliation of PCA-32 Performance
 The Phase 3 report contained seemingly conflicting statements regarding PCA-32:
@@ -106,10 +111,11 @@ The Phase 3 report contained seemingly conflicting statements regarding PCA-32:
 - Section 5.1: `"Beyond d=32, adding dimensions degrades balanced accuracy (dropping from 71.0% to 50.6%)"`
 
 **Audit Finding**:
-- The 9-subject unweighted mean across all 9 folds is **0.7096** ($\approx 0.710$).
-- The 8-subject unweighted mean excluding Subject 109 is **0.7065** ($\approx 0.707$).
-- The pooled window-weighted balanced accuracy across all 14,973 windows is **0.6979** ($\approx 0.698$).
-- Both 71.0% (9-subject) and 70.7% (8-subject) are mathematically valid, but the text previously interchanged them without explicit labeling. The updated report clearly marks them as `71.0% (all 9 folds)` and `70.7% (8 full-protocol folds excluding S109)`.
+- The 9-subject unweighted macro-mean across all 9 folds is **0.7096** ($\approx 0.710$).
+- The 8-subject unweighted macro-mean excluding Subject 109 is **0.7065** ($\approx 0.707$).
+- The 9-subject window-weighted fold-score mean across all 14,973 windows is **0.6979** ($\approx 0.698$).
+- The 9-subject true pooled balanced accuracy from concatenated predictions is **0.6936** ($\approx 0.694$).
+- Both 71.0% (9-subject macro-mean) and 70.7% (8-subject macro-mean) are mathematically valid, but the text previously interchanged them without explicit labeling. The updated report clearly marks them as `71.0% (all 9 folds macro-mean)` and `70.7% (8 full-protocol folds excluding S109 macro-mean)`.
 
 ### 4.3 Verified Per-Subject Metrics Table
 

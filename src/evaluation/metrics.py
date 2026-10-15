@@ -119,6 +119,7 @@ def evaluate_downstream_knn(
     Z_test: np.ndarray,
     y_test: np.ndarray,
     n_neighbors: int = 5,
+    return_predictions: bool = False,
 ) -> Dict[str, Any]:
     """Evaluate activity structure preservation using fixed kNN classifier.
 
@@ -134,18 +135,25 @@ def evaluate_downstream_knn(
         Test activity labels.
     n_neighbors : int, default=5
         k parameter for kNN.
+    return_predictions : bool, default=False
+        Whether to include raw predictions and ground-truth in the return dict.
 
     Returns
     -------
     dict with 'accuracy', 'balanced_accuracy', 'macro_f1', 'n_classes_test'
+    (and optionally 'y_true', 'y_pred' if return_predictions is True)
     """
     if len(Z_test) == 0 or len(Z_train) == 0:
-        return {
+        res: Dict[str, Any] = {
             "accuracy": 0.0,
             "balanced_accuracy": 0.0,
             "macro_f1": 0.0,
             "n_classes_test": 0,
         }
+        if return_predictions:
+            res["y_true"] = y_test
+            res["y_pred"] = np.array([], dtype=int)
+        return res
 
     k = min(n_neighbors, len(Z_train))
     clf = KNeighborsClassifier(n_neighbors=k, metric="euclidean", n_jobs=-1)
@@ -156,12 +164,93 @@ def evaluate_downstream_knn(
     bal_acc = float(balanced_accuracy_score(y_test, y_pred))
     macro_f1 = float(f1_score(y_test, y_pred, average="macro", zero_division=0))
 
-    return {
+    res = {
         "accuracy": round(acc, 4),
         "balanced_accuracy": round(bal_acc, 4),
         "macro_f1": round(macro_f1, 4),
         "n_classes_test": int(len(np.unique(y_test))),
     }
+    if return_predictions:
+        res["y_true"] = y_test
+        res["y_pred"] = y_pred
+    return res
+
+
+def compute_pooled_classification_metrics(
+    y_true: np.ndarray,
+    y_pred: np.ndarray,
+) -> Dict[str, float]:
+    """Compute true pooled classification metrics over concatenated evaluation population.
+
+    Concatenates all held-out predictions and ground-truth labels across all folds,
+    evaluating metric definitions once over the full combined benchmark population.
+
+    Parameters
+    ----------
+    y_true : np.ndarray
+        Concatenated ground-truth activity labels across all evaluation windows.
+    y_pred : np.ndarray
+        Concatenated model predictions across all evaluation windows.
+
+    Returns
+    -------
+    dict with 'pooled_accuracy', 'pooled_balanced_accuracy', 'pooled_macro_f1'
+    """
+    if len(y_true) == 0:
+        return {
+            "pooled_accuracy": 0.0,
+            "pooled_balanced_accuracy": 0.0,
+            "pooled_macro_f1": 0.0,
+        }
+    acc = float(accuracy_score(y_true, y_pred))
+    bal_acc = float(balanced_accuracy_score(y_true, y_pred))
+    macro_f1 = float(f1_score(y_true, y_pred, average="macro", zero_division=0))
+    return {
+        "pooled_accuracy": round(acc, 4),
+        "pooled_balanced_accuracy": round(bal_acc, 4),
+        "pooled_macro_f1": round(macro_f1, 4),
+    }
+
+
+def compute_weighted_fold_score(
+    fold_scores: List[float],
+    window_counts: List[int],
+) -> float:
+    """Compute window-count-weighted average of fold-level scores.
+
+    Formula: sum(N_k * S_k) / sum(N_k)
+
+    Parameters
+    ----------
+    fold_scores : list of float
+        Subject-level evaluation scores (e.g., balanced accuracy per fold).
+    window_counts : list of int
+        Number of evaluated windows per subject fold.
+
+    Returns
+    -------
+    float : weighted average score rounded to 4 decimals
+    """
+    total_windows = sum(window_counts)
+    if total_windows == 0:
+        return 0.0
+    weighted_sum = sum(n * s for n, s in zip(window_counts, fold_scores))
+    return round(float(weighted_sum / total_windows), 4)
+
+
+def compute_macro_mean(
+    fold_scores: List[float],
+) -> Tuple[float, float]:
+    """Compute standard LOSO macro-mean and sample standard deviation across folds.
+
+    Formula:
+        mean = (1 / K) * sum(S_k)
+        std  = sqrt((1 / K) * sum((S_k - mean)^2))
+    """
+    if not fold_scores:
+        return 0.0, 0.0
+    arr = np.array(fold_scores, dtype=np.float64)
+    return round(float(np.mean(arr)), 4), round(float(np.std(arr)), 4)
 
 
 def compute_resource_metrics(

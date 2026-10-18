@@ -104,8 +104,8 @@ The table below summarizes results across all 9 LOSO folds, contrasting 9-subjec
 
 *Methodological Note on Metric Aggregation*:
 - Table 4.1 reports the standard LOSO **unweighted macro-mean across folds** $\pm$ fold standard deviation.
-- For window-count-weighted fold-score averages ($\sum N_k S_k / \sum N_k$): PCA-32 achieves **0.698** (9-sub) and **0.698** (8-sub); Autoencoder-16 achieves **0.709** (9-sub) and **0.709** (8-sub).
-- For true pooled evaluation (concatenating all 14,973 held-out predictions and evaluating once over the global population): PCA-32 achieves **0.694** balanced accuracy, **0.727** accuracy, and **0.698** macro-F1.
+- For window-count-weighted fold-score averages ($\sum N_k S_k / \sum N_k$): Raw Baseline achieves **0.560** (9-sub) and **0.561** (8-sub); PCA-32 achieves **0.698** (9-sub) and **0.698** (8-sub); Autoencoder-16 achieves **0.709** (9-sub) and **0.709** (8-sub).
+- For true pooled evaluation (concatenating all 14,973 held-out predictions and evaluating once over the global population, serialized in `reports/raw_baseline_predictions.json`): Raw Baseline achieves **0.532** balanced accuracy, **0.602** accuracy, and **0.516** macro-F1; PCA-32 achieves **0.694** balanced accuracy, **0.727** accuracy, and **0.698** macro-F1.
 
 ---
 

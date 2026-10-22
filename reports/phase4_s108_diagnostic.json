@@ -1,0 +1,717 @@
+{
+  "class_distribution": {
+    "n_test_windows": 2020,
+    "n_train_windows": 12953,
+    "classes_present_in_s108": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      12,
+      13,
+      16,
+      17,
+      24
+    ],
+    "class_breakdown": {
+      "lying": {
+        "activity_id": 1,
+        "s108_count": 188,
+        "s108_percentage": 9.31,
+        "train_count": 1303,
+        "train_percentage": 10.06
+      },
+      "sitting": {
+        "activity_id": 2,
+        "s108_count": 178,
+        "s108_percentage": 8.81,
+        "train_count": 1247,
+        "train_percentage": 9.63
+      },
+      "standing": {
+        "activity_id": 3,
+        "s108_count": 193,
+        "s108_percentage": 9.55,
+        "train_count": 1252,
+        "train_percentage": 9.67
+      },
+      "walking": {
+        "activity_id": 4,
+        "s108_count": 243,
+        "s108_percentage": 12.03,
+        "train_count": 1599,
+        "train_percentage": 12.34
+      },
+      "running": {
+        "activity_id": 5,
+        "s108_count": 128,
+        "s108_percentage": 6.34,
+        "train_count": 632,
+        "train_percentage": 4.88
+      },
+      "cycling": {
+        "activity_id": 6,
+        "s108_count": 198,
+        "s108_percentage": 9.8,
+        "train_count": 1079,
+        "train_percentage": 8.33
+      },
+      "Nordic walking": {
+        "activity_id": 7,
+        "s108_count": 225,
+        "s108_percentage": 11.14,
+        "train_count": 1236,
+        "train_percentage": 9.54
+      },
+      "ascending stairs": {
+        "activity_id": 12,
+        "s108_count": 88,
+        "s108_percentage": 4.36,
+        "train_count": 807,
+        "train_percentage": 6.23
+      },
+      "descending stairs": {
+        "activity_id": 13,
+        "s108_count": 73,
+        "s108_percentage": 3.61,
+        "train_count": 730,
+        "train_percentage": 5.64
+      },
+      "vacuum cleaning": {
+        "activity_id": 16,
+        "s108_count": 188,
+        "s108_percentage": 9.31,
+        "train_count": 1172,
+        "train_percentage": 9.05
+      },
+      "ironing": {
+        "activity_id": 17,
+        "s108_count": 255,
+        "s108_percentage": 12.62,
+        "train_count": 1586,
+        "train_percentage": 12.24
+      },
+      "rope jumping": {
+        "activity_id": 24,
+        "s108_count": 63,
+        "s108_percentage": 3.12,
+        "train_count": 310,
+        "train_percentage": 2.39
+      }
+    }
+  },
+  "sensor_distribution_shift": {
+    "mean_global_z_shift": 0.2974,
+    "top_shifted_channels": [
+      {
+        "channel_idx": 1,
+        "channel_name": "Hand_16g_Acc_Y",
+        "train_mean": -0.0144,
+        "test_mean": -1.6944,
+        "mean_shift": 1.68,
+        "z_shift": 3.0269
+      },
+      {
+        "channel_idx": 19,
+        "channel_name": "Ankle_16g_Acc_Y",
+        "train_mean": 0.042,
+        "test_mean": 1.2988,
+        "mean_shift": 1.2568,
+        "z_shift": 1.3851
+      },
+      {
+        "channel_idx": 8,
+        "channel_name": "Hand_Mag_Z",
+        "train_mean": -0.0391,
+        "test_mean": -0.3097,
+        "mean_shift": 0.2706,
+        "z_shift": 0.5862
+      },
+      {
+        "channel_idx": 25,
+        "channel_name": "Ankle_Mag_Y",
+        "train_mean": 0.0043,
+        "test_mean": 0.4122,
+        "mean_shift": 0.4079,
+        "z_shift": 0.477
+      },
+      {
+        "channel_idx": 9,
+        "channel_name": "Chest_16g_Acc_X",
+        "train_mean": 0.0082,
+        "test_mean": -0.087,
+        "mean_shift": 0.0952,
+        "z_shift": 0.426
+      },
+      {
+        "channel_idx": 17,
+        "channel_name": "Chest_Mag_Z",
+        "train_mean": 0.0003,
+        "test_mean": -0.0197,
+        "mean_shift": 0.0199,
+        "z_shift": 0.2201
+      },
+      {
+        "channel_idx": 3,
+        "channel_name": "Hand_Gyro_X",
+        "train_mean": -0.0442,
+        "test_mean": 0.0937,
+        "mean_shift": 0.1379,
+        "z_shift": 0.2118
+      },
+      {
+        "channel_idx": 10,
+        "channel_name": "Chest_16g_Acc_Y",
+        "train_mean": 0.0069,
+        "test_mean": 0.0561,
+        "mean_shift": 0.0492,
+        "z_shift": 0.2091
+      },
+      {
+        "channel_idx": 15,
+        "channel_name": "Chest_Mag_X",
+        "train_mean": 0.0007,
+        "test_mean": 0.044,
+        "mean_shift": 0.0433,
+        "z_shift": 0.189
+      },
+      {
+        "channel_idx": 7,
+        "channel_name": "Hand_Mag_Y",
+        "train_mean": -0.0095,
+        "test_mean": -0.1029,
+        "mean_shift": 0.0934,
+        "z_shift": 0.1863
+      }
+    ],
+    "all_channel_shifts": [
+      {
+        "channel_idx": 0,
+        "channel_name": "Hand_16g_Acc_X",
+        "train_mean": -0.0025,
+        "test_mean": -0.0481,
+        "mean_shift": 0.0456,
+        "z_shift": 0.0581
+      },
+      {
+        "channel_idx": 1,
+        "channel_name": "Hand_16g_Acc_Y",
+        "train_mean": -0.0144,
+        "test_mean": -1.6944,
+        "mean_shift": 1.68,
+        "z_shift": 3.0269
+      },
+      {
+        "channel_idx": 2,
+        "channel_name": "Hand_16g_Acc_Z",
+        "train_mean": 0.1182,
+        "test_mean": 0.0509,
+        "mean_shift": 0.0673,
+        "z_shift": 0.0835
+      },
+      {
+        "channel_idx": 3,
+        "channel_name": "Hand_Gyro_X",
+        "train_mean": -0.0442,
+        "test_mean": 0.0937,
+        "mean_shift": 0.1379,
+        "z_shift": 0.2118
+      },
+      {
+        "channel_idx": 4,
+        "channel_name": "Hand_Gyro_Y",
+        "train_mean": -0.0854,
+        "test_mean": -0.0278,
+        "mean_shift": 0.0576,
+        "z_shift": 0.0844
+      },
+      {
+        "channel_idx": 5,
+        "channel_name": "Hand_Gyro_Z",
+        "train_mean": 0.0263,
+        "test_mean": 0.2211,
+        "mean_shift": 0.1948,
+        "z_shift": 0.1848
+      },
+      {
+        "channel_idx": 6,
+        "channel_name": "Hand_Mag_X",
+        "train_mean": -0.0249,
+        "test_mean": -0.0302,
+        "mean_shift": 0.0053,
+        "z_shift": 0.0085
+      },
+      {
+        "channel_idx": 7,
+        "channel_name": "Hand_Mag_Y",
+        "train_mean": -0.0095,
+        "test_mean": -0.1029,
+        "mean_shift": 0.0934,
+        "z_shift": 0.1863
+      },
+      {
+        "channel_idx": 8,
+        "channel_name": "Hand_Mag_Z",
+        "train_mean": -0.0391,
+        "test_mean": -0.3097,
+        "mean_shift": 0.2706,
+        "z_shift": 0.5862
+      },
+      {
+        "channel_idx": 9,
+        "channel_name": "Chest_16g_Acc_X",
+        "train_mean": 0.0082,
+        "test_mean": -0.087,
+        "mean_shift": 0.0952,
+        "z_shift": 0.426
+      },
+      {
+        "channel_idx": 10,
+        "channel_name": "Chest_16g_Acc_Y",
+        "train_mean": 0.0069,
+        "test_mean": 0.0561,
+        "mean_shift": 0.0492,
+        "z_shift": 0.2091
+      },
+      {
+        "channel_idx": 11,
+        "channel_name": "Chest_16g_Acc_Z",
+        "train_mean": 0.0032,
+        "test_mean": -0.0249,
+        "mean_shift": 0.0281,
+        "z_shift": 0.1705
+      },
+      {
+        "channel_idx": 12,
+        "channel_name": "Chest_Gyro_X",
+        "train_mean": 0.0002,
+        "test_mean": -0.0091,
+        "mean_shift": 0.0093,
+        "z_shift": 0.0499
+      },
+      {
+        "channel_idx": 13,
+        "channel_name": "Chest_Gyro_Y",
+        "train_mean": 0.0042,
+        "test_mean": 0.02,
+        "mean_shift": 0.0158,
+        "z_shift": 0.0348
+      },
+      {
+        "channel_idx": 14,
+        "channel_name": "Chest_Gyro_Z",
+        "train_mean": -0.0057,
+        "test_mean": -0.0056,
+        "mean_shift": 0.0001,
+        "z_shift": 0.0004
+      },
+      {
+        "channel_idx": 15,
+        "channel_name": "Chest_Mag_X",
+        "train_mean": 0.0007,
+        "test_mean": 0.044,
+        "mean_shift": 0.0433,
+        "z_shift": 0.189
+      },
+      {
+        "channel_idx": 16,
+        "channel_name": "Chest_Mag_Y",
+        "train_mean": -0.0042,
+        "test_mean": 0.0271,
+        "mean_shift": 0.0313,
+        "z_shift": 0.1211
+      },
+      {
+        "channel_idx": 17,
+        "channel_name": "Chest_Mag_Z",
+        "train_mean": 0.0003,
+        "test_mean": -0.0197,
+        "mean_shift": 0.0199,
+        "z_shift": 0.2201
+      },
+      {
+        "channel_idx": 18,
+        "channel_name": "Ankle_16g_Acc_X",
+        "train_mean": 0.0082,
+        "test_mean": 0.0573,
+        "mean_shift": 0.0491,
+        "z_shift": 0.056
+      },
+      {
+        "channel_idx": 19,
+        "channel_name": "Ankle_16g_Acc_Y",
+        "train_mean": 0.042,
+        "test_mean": 1.2988,
+        "mean_shift": 1.2568,
+        "z_shift": 1.3851
+      },
+      {
+        "channel_idx": 20,
+        "channel_name": "Ankle_16g_Acc_Z",
+        "train_mean": -0.1317,
+        "test_mean": -0.1142,
+        "mean_shift": 0.0175,
+        "z_shift": 0.0198
+      },
+      {
+        "channel_idx": 21,
+        "channel_name": "Ankle_Gyro_X",
+        "train_mean": 0.0708,
+        "test_mean": 0.0417,
+        "mean_shift": 0.0291,
+        "z_shift": 0.0292
+      },
+      {
+        "channel_idx": 22,
+        "channel_name": "Ankle_Gyro_Y",
+        "train_mean": 0.0757,
+        "test_mean": 0.0774,
+        "mean_shift": 0.0017,
+        "z_shift": 0.0016
+      },
+      {
+        "channel_idx": 23,
+        "channel_name": "Ankle_Gyro_Z",
+        "train_mean": -0.0474,
+        "test_mean": -0.1072,
+        "mean_shift": 0.0598,
+        "z_shift": 0.0567
+      },
+      {
+        "channel_idx": 24,
+        "channel_name": "Ankle_Mag_X",
+        "train_mean": 0.0695,
+        "test_mean": 0.1514,
+        "mean_shift": 0.0819,
+        "z_shift": 0.092
+      },
+      {
+        "channel_idx": 25,
+        "channel_name": "Ankle_Mag_Y",
+        "train_mean": 0.0043,
+        "test_mean": 0.4122,
+        "mean_shift": 0.4079,
+        "z_shift": 0.477
+      },
+      {
+        "channel_idx": 26,
+        "channel_name": "Ankle_Mag_Z",
+        "train_mean": 0.013,
+        "test_mean": -0.0445,
+        "mean_shift": 0.0575,
+        "z_shift": 0.0623
+      }
+    ]
+  },
+  "confusion_analysis": {
+    "model_name": "PCA-32",
+    "overall_accuracy": 0.347,
+    "balanced_accuracy": 0.3286,
+    "macro_f1": 0.3004,
+    "per_class_performance": {
+      "lying": {
+        "activity_id": 1,
+        "samples": 188,
+        "correct": 177,
+        "recall": 0.9415,
+        "primary_confusion": "running",
+        "confusion_count": 7
+      },
+      "sitting": {
+        "activity_id": 2,
+        "samples": 178,
+        "correct": 91,
+        "recall": 0.5112,
+        "primary_confusion": "standing",
+        "confusion_count": 62
+      },
+      "standing": {
+        "activity_id": 3,
+        "samples": 193,
+        "correct": 83,
+        "recall": 0.4301,
+        "primary_confusion": "running",
+        "confusion_count": 64
+      },
+      "walking": {
+        "activity_id": 4,
+        "samples": 243,
+        "correct": 30,
+        "recall": 0.1235,
+        "primary_confusion": "sitting",
+        "confusion_count": 94
+      },
+      "running": {
+        "activity_id": 5,
+        "samples": 128,
+        "correct": 30,
+        "recall": 0.2344,
+        "primary_confusion": "ironing",
+        "confusion_count": 54
+      },
+      "cycling": {
+        "activity_id": 6,
+        "samples": 198,
+        "correct": 171,
+        "recall": 0.8636,
+        "primary_confusion": "vacuum cleaning",
+        "confusion_count": 20
+      },
+      "Nordic walking": {
+        "activity_id": 7,
+        "samples": 225,
+        "correct": 0,
+        "recall": 0.0,
+        "primary_confusion": "ironing",
+        "confusion_count": 118
+      },
+      "ascending stairs": {
+        "activity_id": 12,
+        "samples": 88,
+        "correct": 29,
+        "recall": 0.3295,
+        "primary_confusion": "running",
+        "confusion_count": 19
+      },
+      "descending stairs": {
+        "activity_id": 13,
+        "samples": 73,
+        "correct": 8,
+        "recall": 0.1096,
+        "primary_confusion": "walking",
+        "confusion_count": 20
+      },
+      "vacuum cleaning": {
+        "activity_id": 16,
+        "samples": 188,
+        "correct": 56,
+        "recall": 0.2979,
+        "primary_confusion": "cycling",
+        "confusion_count": 68
+      },
+      "ironing": {
+        "activity_id": 17,
+        "samples": 255,
+        "correct": 26,
+        "recall": 0.102,
+        "primary_confusion": "cycling",
+        "confusion_count": 152
+      },
+      "rope jumping": {
+        "activity_id": 24,
+        "samples": 63,
+        "correct": 0,
+        "recall": 0.0,
+        "primary_confusion": "sitting",
+        "confusion_count": 59
+      }
+    },
+    "confusion_matrix": [
+      [
+        177,
+        1,
+        1,
+        0,
+        7,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0,
+        0
+      ],
+      [
+        0,
+        91,
+        62,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        23,
+        0
+      ],
+      [
+        0,
+        26,
+        83,
+        20,
+        64,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        94,
+        14,
+        30,
+        93,
+        5,
+        0,
+        4,
+        0,
+        0,
+        3,
+        0
+      ],
+      [
+        0,
+        2,
+        6,
+        7,
+        30,
+        8,
+        0,
+        11,
+        0,
+        10,
+        54,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        171,
+        0,
+        0,
+        0,
+        20,
+        7,
+        0
+      ],
+      [
+        0,
+        25,
+        2,
+        34,
+        17,
+        14,
+        0,
+        14,
+        0,
+        1,
+        118,
+        0
+      ],
+      [
+        0,
+        16,
+        4,
+        9,
+        19,
+        0,
+        0,
+        29,
+        1,
+        9,
+        1,
+        0
+      ],
+      [
+        0,
+        13,
+        13,
+        20,
+        13,
+        5,
+        0,
+        1,
+        8,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        17,
+        13,
+        11,
+        6,
+        68,
+        0,
+        11,
+        1,
+        56,
+        5,
+        0
+      ],
+      [
+        0,
+        41,
+        23,
+        6,
+        0,
+        152,
+        0,
+        0,
+        1,
+        6,
+        26,
+        0
+      ],
+      [
+        0,
+        59,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        3,
+        0
+      ]
+    ],
+    "classes": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      12,
+      13,
+      16,
+      17,
+      24
+    ]
+  },
+  "unsupervised_calibration": {
+    "unadapted": {
+      "balanced_accuracy": 0.3286,
+      "accuracy": 0.347,
+      "macro_f1": 0.3004
+    },
+    "unsupervised_channel_centering": {
+      "balanced_accuracy": 0.3144,
+      "accuracy": 0.3188,
+      "macro_f1": 0.3021,
+      "delta_balanced_accuracy": -0.0142
+    },
+    "unsupervised_latent_covariance_alignment": {
+      "balanced_accuracy": 0.3453,
+      "accuracy": 0.3406,
+      "macro_f1": 0.3131,
+      "delta_balanced_accuracy": 0.0167
+    },
+    "deployment_requirements": "Unsupervised calibration requires buffered target-domain unlabeled windows prior to classification. In real-time streaming, unadapted inference remains the primary zero-buffering deployment paradigm."
+  }
+}

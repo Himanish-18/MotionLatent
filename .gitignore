@@ -59,10 +59,12 @@ reports/audit_output.json
 .env
 .env.*
 
-# --- Caches ---
+# --- Caches and Binaries ---
 .cache/
 .pytest_cache/
 .mypy_cache/
+*.exe
+*.o
 
 # --- Gemini IDE ---
 .gemini/

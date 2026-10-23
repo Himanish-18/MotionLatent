@@ -49,6 +49,7 @@ ehthumbs.db
 reports/figures/*.png
 reports/figures/*.pdf
 reports/figures/*.svg
+!reports/figures/phase5_*.png
 
 # --- Audit outputs (machine-readable, regenerable) ---
 reports/audit_output.json

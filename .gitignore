@@ -69,3 +69,7 @@ reports/audit_output.json
 
 # --- Gemini IDE ---
 .gemini/
+
+# --- React / Node.js ---
+frontend/node_modules/
+frontend/dist/
